@@ -1,7 +1,4 @@
 {
-    "plugins": [
-      ["babel-plugin-styled-components", {
-        "namespace": "my-app"
-      }]
-    ]
+    "presets": ["next/babel"]
   }
+  

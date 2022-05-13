@@ -7,6 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "test": "jest --env=jsdom",
+    "test:watch": "jest --env=jsdom --watch",
     "prettier:check": "npx prettier --check .",
     "prettier:write": "npx prettier --write .",
     "prepare": "husky install",
@@ -18,10 +20,14 @@
     "htmlhint": "npx htmlhint '**/*.html'"
   },
   "dependencies": {
+    "immer": "^9.0.13",
+    "jest-environment-jsdom": "^28.1.0",
     "next": "12.1.6",
+    "node-localstorage": "^2.2.1",
     "react": "18.1.0",
     "react-dom": "18.1.0",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.5",
+    "use-immer": "^0.7.0"
   },
   "devDependencies": {
     "@babel/core": "^7.17.10",
@@ -33,6 +39,9 @@
     "@storybook/manager-webpack5": "^6.4.22",
     "@storybook/react": "^6.4.22",
     "@storybook/testing-library": "^0.0.11",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.2.0",
+    "babel-jest": "^28.1.0",
     "eslint": "8.15.0",
     "eslint-config-next": "12.1.6",
     "eslint-config-prettier": "^8.5.0",
@@ -42,7 +51,9 @@
     "eslint-plugin-react-hooks": "^4.5.0",
     "eslint-plugin-storybook": "^0.5.11",
     "husky": "^8.0.1",
+    "jest": "^28.1.0",
     "lint-staged": "^12.4.1",
     "prettier": "^2.6.2"
-  }
+  },
+  "license": "MIT"
 }
