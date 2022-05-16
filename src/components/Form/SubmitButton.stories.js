@@ -1,12 +1,22 @@
 import React from 'react';
 import { SubmitButton } from './SubmitButton.styled';
 
-const config = {
+export default {
 	title: 'Components/SubmitButton',
 	component: SubmitButton,
+	decorators: [
+		Story => {
+			return (
+				<div style={{ padding: '3em', maxWidth: '400px', position: 'relative' }}>
+					<Story />
+				</div>
+			);
+		},
+	],
 };
-export default config;
+
+const ButtonText = 'Submit';
 
 export function Default() {
-	return <SubmitButton>Submit</SubmitButton>;
+	return <SubmitButton>{ButtonText}</SubmitButton>;
 }

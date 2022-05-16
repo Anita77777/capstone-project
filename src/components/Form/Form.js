@@ -1,66 +1,66 @@
-import { Container, Formcomment, Formfield } from './Form.styled';
-import { SubmitButton } from '../Form/SubmitButton.styled';
-import { useImmer } from 'use-immer';
+/* eslint-disable no-unused-vars */
+import { useState } from 'react';
 import { nanoid } from 'nanoid';
+import { useForm } from 'react-hook-form';
+import { Container, Formcomment, Formfield, Card, CardContainer } from './Form.styled';
+import { SubmitButton } from '../Form/SubmitButton.styled';
 
-export default function Form({ updateAuthors }) {
-	const [authorValue, updateAuthorValue] = useImmer('');
+export default function Form() {
+	const [form, setForm] = useState([]);
 
-	const [titleValue, updateTitleValue] = useImmer('');
-	const [commentValue, updateCommentValue] = useImmer('');
+	const {
+		register,
+		handleSubmit,
+		watch,
+		formState: { errors },
+	} = useForm();
 
 	return (
-		<Container>
-			<form
-				onSubmit={event => {
-					event.preventDefault();
-					updateAuthors(draft => {
-						draft.push({
-							name: authorValue,
-							id: nanoid(),
-						});
-					});
-					updateAuthorValue('');
-				}}
-			>
-				<Formfield
-					required
-					fullWidth
-					name="author"
-					type="text"
-					label="author"
-					value={authorValue}
-					placeholder="Add author here"
-					onChange={event => {
-						updateAuthorValue(event.target.value);
-					}}
-				/>
-				<Formfield
-					required
-					fullWidth
-					name="title"
-					label="title"
-					value={titleValue}
-					placeholder="Add booktitle here"
-					onChange={event => {
-						updateTitleValue(event.target.value);
-					}}
-				/>
-				<Formcomment
-					required
-					fullWidth
-					name="comment"
-					label="comment"
-					value={commentValue}
-					placeholder="leave a comment here"
-					onChange={event => {
-						updateCommentValue(event.target.value);
-					}}
-				/>
-				<SubmitButton type="submit" variant="contained">
-					Submit
-				</SubmitButton>
-			</form>
-		</Container>
+		<>
+			<Container>
+				<label htmlFor="Form">Form:</label>
+				<Form
+					onSubmit={handleSubmit(data => setForm([...form, { ...data, id: nanoid() }]))}
+				>
+					<Formfield
+						type="text"
+						text="Author"
+						placeholder="Add Author"
+						{...register('Author')}
+					/>
+					<Formfield
+						type="text"
+						text="Booktitle"
+						placeholder="Add Booktitle"
+						{...register('Booktitle')}
+					/>
+					<Formcomment
+						type="text"
+						text="Comment"
+						placeholder="Add your Comment"
+						{...register('Comment')}
+					/>
+
+					<SubmitButton type="submit">submit</SubmitButton>
+				</Form>
+			</Container>
+			<CardContainer>
+				{form.map(form => {
+					return (
+						// eslint-disable-next-line react/jsx-key
+						<>
+							<Card key={form.id}>
+								<p>Author: {form.Author}</p>
+								<br />
+								<p> Booktitle: {form.Booktitle}</p>
+								<br />
+								<p>Comment: {form.Comment}</p>
+							</Card>
+							<br />
+						</>
+					);
+				})}
+			</CardContainer>
+		</>
 	);
 }
