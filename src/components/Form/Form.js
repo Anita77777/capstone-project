@@ -1,40 +1,46 @@
-/* eslint-disable no-unused-vars */
 import { useState } from 'react';
-import { nanoid } from 'nanoid';
 import { useForm } from 'react-hook-form';
 import { Container, Formcomment, Formfield, Card, CardContainer } from './Form.styled';
-import { SubmitButton } from '../Form/SubmitButton.styled';
+import { SubmitButton } from '../Button.js/SubmitButton.styled';
+import { nanoid } from 'nanoid';
 
 export default function Form() {
-	const [form, setForm] = useState([]);
+	const [forms, setForms] = useState([]);
 
-	const {
-		register,
-		handleSubmit,
-		watch,
-		formState: { errors },
-	} = useForm();
+	const { register, handleSubmit } = useForm();
 
 	return (
 		<>
 			<Container>
-				<label htmlFor="Form">Form:</label>
-				<Form
-					onSubmit={handleSubmit(data => setForm([...form, { ...data, id: nanoid() }]))}
+				<form
+					onSubmit={handleSubmit(data => setForms([...forms, { ...data, id: nanoid() }]))}
 				>
+					<label htmlFor="Author">
+						<h3>Author</h3>
+					</label>
 					<Formfield
+						required
 						type="text"
-						text="Author"
+						name="Author"
 						placeholder="Add Author"
+						autoComplete="off"
 						{...register('Author')}
 					/>
+					<label htmlFor="Booktitle">
+						<h3>Booktitle: </h3>
+					</label>
 					<Formfield
+						required
 						type="text"
 						text="Booktitle"
 						placeholder="Add Booktitle"
 						{...register('Booktitle')}
 					/>
+					<label htmlFor="Comment">
+						<h3>Comment: </h3>
+					</label>
 					<Formcomment
+						required
 						type="text"
 						text="Comment"
 						placeholder="Add your Comment"
@@ -42,22 +48,16 @@ export default function Form() {
 					/>
 
 					<SubmitButton type="submit">submit</SubmitButton>
-				</Form>
+				</form>
 			</Container>
 			<CardContainer>
-				{form.map(form => {
+				{forms.map(forms => {
 					return (
-						// eslint-disable-next-line react/jsx-key
-						<>
-							<Card key={form.id}>
-								<p>Author: {form.Author}</p>
-								<br />
-								<p> Booktitle: {form.Booktitle}</p>
-								<br />
-								<p>Comment: {form.Comment}</p>
-							</Card>
-							<br />
-						</>
+						<Card key={forms.id}>
+							Author: {forms.Author}
+							Booktitle: {forms.Booktitle}
+							Comment: {forms.Comment}
+						</Card>
 					);
 				})}
 			</CardContainer>

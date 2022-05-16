@@ -1,19 +1,23 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+	color: white;
 	display: flex;
 	flex-direction: column;
-	background-color: none;
-	align-items: center;
+	justify-content: space-evenly;
+	background-color: #56144d;
 	text-align: start;
-	width: 80vh;
+	width: 100vh;
+	margin: 20px;
+	padding: 100px;
 `;
 
 export const Formfield = styled.input`
+	display: flex;
+	flex-direction: column;
 	color: grey;
 	font-weight: bold;
 	display: flex;
-	flex-direction: column;
 	flex-wrap: wrap;
 	height: 50px;
 	width: 500px;
@@ -21,11 +25,12 @@ export const Formfield = styled.input`
 	margin: 20px;
 `;
 
-export const Formcomment = styled.input`
+export const Formcomment = styled.textarea`
 	color: grey;
 	font-weight: bold;
 	height: 200px;
 	width: 500px;
+	align-content: start;
 	margin: 20px;
 `;
 
@@ -34,8 +39,8 @@ export const CardContainer = styled.ul`
 	flex-direction: column;
 	justify-content: center;
 	border: solid black;
-	margin: 120px;
 	align-items: center;
+	margin: 200px;
 	width: 500px;
 	height: 400px;
 	border-radius: 10px;

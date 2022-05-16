@@ -17,7 +17,8 @@
     "build-storybook": "build-storybook",
     "lint:css": "stylelint './src/**/*.js'",
     "eslint": "npx eslint \"**/*.js\"",
-    "htmlhint": "npx htmlhint '**/*.html'"
+    "htmlhint": "npx htmlhint '**/*.html'",
+    "type": "module"
   },
   "dependencies": {
     "immer": "^9.0.13",
