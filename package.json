@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest --env=jsdom",
-    "test:watch": "jest --env=jsdom --watch",
+    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest",
+    "test:watch": "NODE_OPTIONS=--experimental-vm-modules npx jest --watch",
     "prettier:check": "npx prettier --check .",
     "prettier:write": "npx prettier --write .",
     "prepare": "husky install",
@@ -17,8 +17,8 @@
     "build-storybook": "build-storybook",
     "lint:css": "stylelint './src/**/*.js'",
     "eslint": "npx eslint \"**/*.js\"",
-    "htmlhint": "npx htmlhint '**/*.html'",
-    "type": "module"
+    "htmlhint": "npx htmlhint '**/*.html'"
+    
   },
   "dependencies": {
     "immer": "^9.0.13",

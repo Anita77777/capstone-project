@@ -36,17 +36,15 @@ export const Formcomment = styled.textarea`
 
 export const CardContainer = styled.ul`
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
+	text-align: center;
+	flex-direction: column;
+	padding: 100px;
 	border: solid black;
-	align-items: center;
-	margin: 200px;
+	margin: 150px;
 	width: 500px;
-	height: 400px;
+	height: 300px;
 	border-radius: 10px;
 	box-shadow: 10px 10px 10px 10px lightgrey;
-`;
-
-export const Card = styled.li`
 	list-style-type: none;
 `;

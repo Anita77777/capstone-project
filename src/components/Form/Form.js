@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Container, Formcomment, Formfield, Card, CardContainer } from './Form.styled';
+import { Container, Formcomment, Formfield, CardContainer } from './Form.styled';
 import { SubmitButton } from '../Button.js/SubmitButton.styled';
 import { nanoid } from 'nanoid';
 
@@ -53,11 +53,15 @@ export default function Form() {
 			<CardContainer>
 				{forms.map(forms => {
 					return (
-						<Card key={forms.id}>
+						<li key={forms.id}>
+							<br />
 							Author: {forms.Author}
+							<br />
 							Booktitle: {forms.Booktitle}
+							<br />
 							Comment: {forms.Comment}
-						</Card>
+							<br />
+						</li>
 					);
 				})}
 			</CardContainer>
