@@ -1,70 +1,88 @@
-import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Container, Formcomment, Formfield, CardContainer } from './Form.styled';
-import { SubmitButton } from '../Button.js/SubmitButton.styled';
+import { CardContainer, Container, Formcomment, Formfield } from './Form.styled';
+import { SubmitButton } from '../Button/SubmitButton.styled';
 import { nanoid } from 'nanoid';
+import { useState } from 'react';
 
 export default function Form() {
-	const [forms, setForms] = useState([]);
+	const [books, setBooks] = useState([
+		{
+			author: 'Paolo Coelho',
+			title: 'The Alchemist',
+			comment:
+				'An Andalusian shepherd boy named Santiago dreams of a treasure while in a ruined church. He consults a Gypsy fortune-teller about the meaning of the recurring dream. The woman interprets it as a prophecy, telling the boy that he will discover a treasure at the Egyptian pyramids. ',
+			id: nanoid(),
+		},
+	]);
+	const {
+		register,
+		handleSubmit,
 
-	const { register, handleSubmit } = useForm();
+		formState: { errors },
+	} = useForm();
 
 	return (
 		<>
 			<Container>
 				<form
-					onSubmit={handleSubmit(data => setForms([...forms, { ...data, id: nanoid() }]))}
+					onSubmit={handleSubmit(data => setBooks([...books, { ...data, id: nanoid() }]))}
 				>
 					<label htmlFor="Author">
 						<h3>Author</h3>
 					</label>
 					<Formfield
+						aria-invalid={errors.name ? 'true' : 'false'}
+						{...register('author', { required: true, maxLength: 30 })}
 						required
+						name="author"
 						type="text"
-						name="Author"
-						placeholder="Add Author"
+						id="nanoid"
 						autoComplete="off"
-						{...register('Author')}
 					/>
+
 					<label htmlFor="Booktitle">
 						<h3>Booktitle: </h3>
 					</label>
 					<Formfield
+						aria-invalid={errors.name ? 'true' : 'false'}
+						{...register('title', { required: true, maxLength: 30 })}
 						required
+						name="title"
 						type="text"
-						text="Booktitle"
-						placeholder="Add Booktitle"
-						{...register('Booktitle')}
+						id="nanoid"
+						autoComplete="off"
 					/>
+
 					<label htmlFor="Comment">
 						<h3>Comment: </h3>
 					</label>
 					<Formcomment
+						aria-invalid={errors.Comment ? 'true' : 'false'}
+						{...register('comment', { required: true, maxLength: 30 })}
 						required
+						name="comment"
 						type="text"
-						text="Comment"
-						placeholder="Add your Comment"
-						{...register('Comment')}
+						id="nanoid"
+						autoComplete="off"
 					/>
 
 					<SubmitButton type="submit">submit</SubmitButton>
 				</form>
 			</Container>
-			<CardContainer>
-				{forms.map(forms => {
+			<ul>
+				{books.map(book => {
 					return (
-						<li key={forms.id}>
-							<br />
-							Author: {forms.Author}
-							<br />
-							Booktitle: {forms.Booktitle}
-							<br />
-							Comment: {forms.Comment}
-							<br />
-						</li>
+						// eslint-disable-next-line react/jsx-key
+						<CardContainer>
+							<li key={book.id}>
+								<p>Author: {book.author}</p>
+								<p>Title: {book.title}</p>
+								<p>Comment: {book.comment}</p>
+							</li>
+						</CardContainer>
 					);
 				})}
-			</CardContainer>
+			</ul>
 		</>
 	);
 }

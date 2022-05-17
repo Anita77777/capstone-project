@@ -18,7 +18,6 @@
     "lint:css": "stylelint './src/**/*.js'",
     "eslint": "npx eslint \"**/*.js\"",
     "htmlhint": "npx htmlhint '**/*.html'"
-    
   },
   "dependencies": {
     "immer": "^9.0.13",
@@ -30,7 +29,8 @@
     "react-dom": "18.1.0",
     "react-hook-form": "^7.31.1",
     "styled-components": "^5.3.5",
-    "use-immer": "^0.7.0"
+    "use-immer": "^0.7.0",
+    "zustand": "^4.0.0-rc.1"
   },
   "devDependencies": {
     "@babel/core": "^7.17.10",
