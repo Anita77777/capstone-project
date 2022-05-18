@@ -36,7 +36,7 @@ export default function Form() {
 						required
 						name="author"
 						type="text"
-						id="nanoid"
+						id="author"
 						autoComplete="off"
 					/>
 
@@ -49,7 +49,7 @@ export default function Form() {
 						required
 						name="title"
 						type="text"
-						id="nanoid"
+						id="title"
 						autoComplete="off"
 					/>
 
@@ -58,11 +58,11 @@ export default function Form() {
 					</label>
 					<Formcomment
 						aria-invalid={errors.Comment ? 'true' : 'false'}
-						{...register('comment', { required: true, maxLength: 30 })}
+						{...register('comment', { required: true, maxLength: 100 })}
 						required
 						name="comment"
 						type="text"
-						id="nanoid"
+						id="comment"
 						autoComplete="off"
 					/>
 
@@ -77,7 +77,7 @@ export default function Form() {
 							<li key={book.id}>
 								<p>Author: {book.author}</p>
 								<p>Title: {book.title}</p>
-								<p>Comment: {book.comment}</p>
+								<p>{book.comment}</p>
 							</li>
 						</CardContainer>
 					);
