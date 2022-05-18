@@ -1,8 +1,8 @@
 import { useForm } from 'react-hook-form';
-import { CardContainer, Container, Formcomment, Formfield } from './Form.styled';
+import { CardContainer, Container, Formcomment, Formfield, Label } from './Form.styled';
 import { SubmitButton } from '../Button/SubmitButton.styled';
 import { nanoid } from 'nanoid';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 export default function Form() {
 	const [books, setBooks] = useState([
@@ -27,9 +27,7 @@ export default function Form() {
 				<form
 					onSubmit={handleSubmit(data => setBooks([...books, { ...data, id: nanoid() }]))}
 				>
-					<label htmlFor="Author">
-						<h3>Author</h3>
-					</label>
+					<Label htmlFor="Author">Author</Label>
 					<Formfield
 						aria-invalid={errors.name ? 'true' : 'false'}
 						{...register('author', { required: true, maxLength: 30 })}
@@ -40,9 +38,7 @@ export default function Form() {
 						autoComplete="off"
 					/>
 
-					<label htmlFor="Booktitle">
-						<h3>Booktitle: </h3>
-					</label>
+					<Label htmlFor="Booktitle">Booktitle</Label>
 					<Formfield
 						aria-invalid={errors.name ? 'true' : 'false'}
 						{...register('title', { required: true, maxLength: 30 })}
@@ -53,9 +49,7 @@ export default function Form() {
 						autoComplete="off"
 					/>
 
-					<label htmlFor="Comment">
-						<h3>Comment: </h3>
-					</label>
+					<Label htmlFor="Comment">Comment</Label>
 					<Formcomment
 						aria-invalid={errors.Comment ? 'true' : 'false'}
 						{...register('comment', { required: true, maxLength: 100 })}
@@ -72,9 +66,8 @@ export default function Form() {
 			<ul>
 				{books.map(book => {
 					return (
-						// eslint-disable-next-line react/jsx-key
-						<CardContainer>
-							<li key={book.id}>
+						<CardContainer key={book.id}>
+							<li>
 								<p>Author: {book.author}</p>
 								<p>Title: {book.title}</p>
 								<p>{book.comment}</p>

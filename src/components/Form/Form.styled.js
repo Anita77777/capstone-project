@@ -52,3 +52,9 @@ export const CardContainer = styled.ul`
 	line-height: 25px;
 	color: blue;
 `;
+
+export const Label = styled.label`
+	display: flex;
+	font-size: 20px;
+	font-weight: bold;
+`;
