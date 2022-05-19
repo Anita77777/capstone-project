@@ -2,6 +2,7 @@ import { useForm } from 'react-hook-form';
 import { Container, Formcomment, Formfield, Label } from './Form.styled';
 import { SubmitButton } from '../Button/SubmitButton.styled';
 import useStore from '../useStore/useStore';
+import { Fieldset, LabelRadio } from '../Button/RadioButtonstyled';
 
 export default function Form() {
 	const {
@@ -53,6 +54,29 @@ export default function Form() {
 					id="comment"
 					autoComplete="off"
 				/>
+
+				<Fieldset
+					aria-invalid={errors.selection ? 'true' : 'false'}
+					{...register('selection', { required: true })}
+				>
+					<input
+						{...register('selection')}
+						name="selection"
+						type="radio"
+						id="standalone"
+						value="standalone"
+					/>
+					<LabelRadio htmlFor="standalone">Standalone</LabelRadio>
+
+					<input
+						{...register('selection')}
+						name="selection"
+						type="radio"
+						id="series"
+						value="series"
+					/>
+					<LabelRadio htmlFor="series">Series</LabelRadio>
+				</Fieldset>
 
 				<SubmitButton type="submit">submit</SubmitButton>
 			</form>
