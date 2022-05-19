@@ -5,16 +5,16 @@ import { nanoid } from 'nanoid';
 const useStore = create(
 	persist(
 		set => ({
-			newBook: [],
-			addNewBook: book =>
+			newBooks: [],
+			addNewBook: books =>
 				set(state => ({
-					newBook: [
-						...state.newBook,
+					newBooks: [
+						...state.newBooks,
 						{
 							id: nanoid(),
-							author: book.author,
-							title: book.title,
-							comment: book.comment,
+							author: books.author,
+							title: books.title,
+							comment: books.comment,
 						},
 					],
 				})),

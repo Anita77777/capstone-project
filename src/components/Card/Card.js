@@ -2,16 +2,16 @@ import useStore from '../useStore/useStore';
 import { CardContainer } from '../Form/Form.styled';
 
 export default function Card() {
-	const newBook = useStore(state => state.newBook);
+	const newBooks = useStore(state => state.newBooks);
 	return (
 		<ul>
-			{newBook.map(book => {
+			{newBooks.map(books => {
 				return (
-					<CardContainer key={book.id}>
+					<CardContainer key={books.id}>
 						<li>
-							<p>Author: {book.author}</p>
-							<p>Title: {book.title}</p>
-							<p>{book.comment}</p>
+							<p>Author: {books.author}</p>
+							<p>Title: {books.title}</p>
+							<p>{books.comment}</p>
 						</li>
 					</CardContainer>
 				);

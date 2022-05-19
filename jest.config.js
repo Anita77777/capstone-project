@@ -10,10 +10,4 @@ const customJestConfig = {
 	resolver: `${__dirname}/jest-resolver.js`,
 };
 
-/* const { defaults } = require('jest-config');
-module.exports = {
-	...defaults,
-	resolver: `${__dirname}/jest-resolver.js`,
-}; */
-
 module.exports = createJestConfig(customJestConfig);
