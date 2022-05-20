@@ -47,3 +47,11 @@ export const Label = styled.label`
 	font-size: 20px;
 	font-weight: bold;
 `;
+
+export const WrapperBookmark = styled.section`
+	display: flex;
+	justify-content: space-evenly;
+	width: 80vw;
+	margin: 30px;
+	background-color: white;
+`;

@@ -1,9 +1,10 @@
 import { useForm } from 'react-hook-form';
-import { Container, Formcomment, Formfield, Label } from './Form.styled';
+import { Container, Formcomment, Formfield, Label, WrapperBookmark } from './Form.styled';
 import { SubmitButton } from '../Button/SubmitButton.styled';
 import useStore from '../useStore/useStore';
 import { Fieldset, LabelRadio } from '../Button/RadioButtonstyled';
-
+import MySVG from '../SVG/SVG';
+import { useState } from 'react';
 export default function Form() {
 	const {
 		register,
@@ -18,6 +19,9 @@ export default function Form() {
 	};
 
 	const addNewBook = useStore(state => state.addNewBook);
+	const [bookmarkedLoved, setBookmarkedLoved] = useState(false);
+	const [bookmarkedDisliked, setBookmarkedDisliked] = useState(false);
+	const [bookmarkedRead, setBookmarkedRead] = useState(false);
 
 	return (
 		<Container>
@@ -77,6 +81,43 @@ export default function Form() {
 					/>
 					<LabelRadio htmlFor="series">Series</LabelRadio>
 				</Fieldset>
+				<WrapperBookmark>
+					<article
+						onClick={() => {
+							setBookmarkedLoved(!bookmarkedLoved);
+						}}
+					>
+						{bookmarkedLoved ? (
+							<MySVG variant="heartFilled" color="red" />
+						) : (
+							<MySVG variant="heartEmpty" />
+						)}
+					</article>
+
+					<article
+						onClick={() => {
+							setBookmarkedDisliked(!bookmarkedDisliked);
+						}}
+					>
+						{bookmarkedDisliked ? (
+							<MySVG variant="brokenHeartFilled" color="red" />
+						) : (
+							<MySVG variant="brokenHeartEmpty" />
+						)}
+					</article>
+
+					<article
+						onClick={() => {
+							setBookmarkedRead(!bookmarkedRead);
+						}}
+					>
+						{bookmarkedRead ? (
+							<MySVG variant="bookFilled" color="red" />
+						) : (
+							<MySVG variant="bookEmpty" />
+						)}
+					</article>
+				</WrapperBookmark>
 
 				<SubmitButton type="submit">submit</SubmitButton>
 			</form>
