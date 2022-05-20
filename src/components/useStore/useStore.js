@@ -15,6 +15,8 @@ const useStore = create(
 							author: books.author,
 							title: books.title,
 							comment: books.comment,
+							selection: books.selection,
+							series: books.series,
 						},
 					],
 				})),

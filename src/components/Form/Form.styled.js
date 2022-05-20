@@ -4,57 +4,46 @@ export const Container = styled.div`
 	color: black;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-evenly;
+	justify-content: start;
 	text-align: start;
-	width: 100vh;
+	width: 100vw;
 	margin: 20px;
 	padding: 100px;
+	background-color: #694370;
 `;
 
 export const Formfield = styled.input`
 	display: flex;
+	align-items: flex-start;
 	flex-direction: column;
-	color: black;
+	color: white;
 	font-weight: bold;
 	display: flex;
 	flex-wrap: wrap;
 	height: 50px;
-	width: 500px;
+	width: 80vw;
 	margin: 20px;
-	background-color: lightblue;
+	background-color: #2a2a2a;
 `;
 
 export const Formcomment = styled.textarea`
-	color: black;
+	display: flex;
+	text-align: start;
+	color: white;
 	font-weight: bold;
 	height: 200px;
-	width: 500px;
+	width: 80vw;
 	align-content: start;
 	margin: 20px;
 	word-wrap: wrap;
-	background-color: lightblue;
-`;
-
-export const CardContainer = styled.ul`
-	display: flex;
-	justify-content: center;
-	text-align: center;
-	flex-direction: column;
-	padding: 50px;
-	border: solid black;
-	margin: 110px;
-	width: 500px;
-	height: 300px;
-	border-radius: 10px;
-	box-shadow: 10px 10px 10px 10px lightgrey;
-	list-style-type: none;
-	margin-top: 50px;
-	line-height: 25px;
-	color: blue;
+	background-color: #2a2a2a;
 `;
 
 export const Label = styled.label`
 	display: flex;
+	color: white;
+	justify-content: start;
+	margin-left: 20px;
 	font-size: 20px;
 	font-weight: bold;
 `;

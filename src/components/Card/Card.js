@@ -1,5 +1,5 @@
 import useStore from '../useStore/useStore';
-import { CardContainer } from '../Form/Form.styled';
+import { CardContainer } from '../Card/Card.styled';
 
 export default function Card() {
 	const newBooks = useStore(state => state.newBooks);
@@ -12,6 +12,7 @@ export default function Card() {
 							<p>Author: {books.author}</p>
 							<p>Title: {books.title}</p>
 							<p>{books.comment}</p>
+							<p>{books.selection}</p>
 						</li>
 					</CardContainer>
 				);
