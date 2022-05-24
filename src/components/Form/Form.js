@@ -5,6 +5,7 @@ import useStore from '../useStore/useStore';
 import { Fieldset, LabelRadio } from '../Button/RadioButtonstyled';
 import MySVG from '../SVG/SVG';
 import { useState } from 'react';
+
 export default function Form() {
 	const {
 		register,
@@ -81,6 +82,7 @@ export default function Form() {
 					/>
 					<LabelRadio htmlFor="series">Series</LabelRadio>
 				</Fieldset>
+
 				<WrapperBookmark>
 					<article
 						onClick={() => {
