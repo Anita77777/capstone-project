@@ -27,6 +27,14 @@ const useStore = create(
 				};
 			});
 		},
+
+		toggleBookmark: id => {
+			set(state => {
+				return {
+					newBooks: state.newBooks.map(books => (books.id === id ? { ...books } : books)),
+				};
+			});
+		},
 	}))
 );
 
