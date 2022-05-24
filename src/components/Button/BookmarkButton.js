@@ -1,7 +1,6 @@
 import useStore from '../useStore/useStore';
 import { WrapperBookmark } from '../Form/Form.styled';
 import MySVG from '../SVG/SVG';
-import styled from 'styled-components';
 
 export default function Bookmark() {
 	const updateBookmark = useStore(state => state.updateBookmark);
