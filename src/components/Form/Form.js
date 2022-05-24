@@ -6,6 +6,9 @@ import { Fieldset, LabelRadio } from '../Button/RadioButtonstyled';
 import Bookmark from '../Button/BookmarkButton';
 
 export default function Form() {
+	const addNewBook = useStore(state => state.addNewBook);
+	const bookmarkStatus = useStore(state => state.bookmarkStatus);
+
 	const {
 		register,
 		handleSubmit,
@@ -14,11 +17,13 @@ export default function Form() {
 	} = useForm();
 
 	const onSubmit = book => {
-		addNewBook(book);
+		const newBook = {
+			...book,
+			bookmarkStatus: bookmarkStatus,
+		};
+		addNewBook(newBook);
 		reset();
 	};
-
-	const addNewBook = useStore(state => state.addNewBook);
 
 	return (
 		<Container>

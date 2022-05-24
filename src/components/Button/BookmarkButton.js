@@ -1,38 +1,42 @@
-import { useStore } from 'zustand';
+import useStore from '../useStore/useStore';
 import { WrapperBookmark } from '../Form/Form.styled';
 import MySVG from '../SVG/SVG';
 
 export default function Bookmark() {
-	const toggleBookmark = useStore(state => state.toggleBookmark);
-
+	const updateBookmark = useStore(state => state.updateBookmark);
+	const bookmarkStatus = useStore(state => state.bookmarkStatus);
+	console.log(bookmarkStatus);
 	return (
-		<button
-			type="submit"
-			variant="bookmark"
-			onClick={event => {
-				event.preventDefault();
-				toggleBookmark();
-			}}
-		>
-			<WrapperBookmark>
-				{toggleBookmark ? (
-					<MySVG variant="heartFilled" color="red" />
-				) : (
+		<WrapperBookmark>
+			{bookmarkStatus === 'liked' ? (
+				<div onClick={() => updateBookmark('')}>
+					<MySVG variant="heartFilled" color="#694370" />{' '}
+				</div>
+			) : (
+				<div onClick={() => updateBookmark('liked')}>
 					<MySVG variant="heartEmpty" />
-				)}
+				</div>
+			)}
 
-				{toggleBookmark ? (
-					<MySVG variant="brokenHeartFilled" color="red" />
-				) : (
-					<MySVG variant="brokenHeartEmpty" />
-				)}
+			{bookmarkStatus === 'disliked' ? (
+				<div onClick={() => updateBookmark('')}>
+					<MySVG variant="brokenHeartFilled" color="#694370" />{' '}
+				</div>
+			) : (
+				<div onClick={() => updateBookmark('disliked')}>
+					<MySVG variant="brokenHeartEmpty" />{' '}
+				</div>
+			)}
 
-				{toggleBookmark ? (
-					<MySVG variant="bookFilled" color="red" />
-				) : (
-					<MySVG variant="bookEmpty" />
-				)}
-			</WrapperBookmark>
-		</button>
+			{bookmarkStatus === 'tbr' ? (
+				<div onClick={() => updateBookmark('')}>
+					<MySVG variant="bookFilled" color="#694370" />{' '}
+				</div>
+			) : (
+				<div onClick={() => updateBookmark('tbr')}>
+					<MySVG variant="bookEmpty" />{' '}
+				</div>
+			)}
+		</WrapperBookmark>
 	);
 }
