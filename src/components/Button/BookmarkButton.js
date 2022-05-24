@@ -10,31 +10,32 @@ export default function Bookmark() {
 		<WrapperBookmark>
 			{bookmarkStatus === 'liked' ? (
 				<div onClick={() => updateBookmark('')}>
-					<MySVG variant="heartFilled" color="#694370" />{' '}
+					{' '}
+					<MySVG variant="heartFilled" color="#694370" />
 				</div>
 			) : (
 				<div onClick={() => updateBookmark('liked')}>
 					<MySVG variant="heartEmpty" />
+					<p>Liked</p>
 				</div>
 			)}
-
 			{bookmarkStatus === 'disliked' ? (
 				<div onClick={() => updateBookmark('')}>
 					<MySVG variant="brokenHeartFilled" color="#694370" />{' '}
 				</div>
 			) : (
 				<div onClick={() => updateBookmark('disliked')}>
-					<MySVG variant="brokenHeartEmpty" />{' '}
+					<MySVG variant="brokenHeartEmpty" /> <p>Disliked</p>
 				</div>
 			)}
-
 			{bookmarkStatus === 'tbr' ? (
 				<div onClick={() => updateBookmark('')}>
 					<MySVG variant="bookFilled" color="#694370" />{' '}
 				</div>
 			) : (
 				<div onClick={() => updateBookmark('tbr')}>
-					<MySVG variant="bookEmpty" />{' '}
+					<MySVG variant="bookEmpty" />
+					<p>Tbr</p>
 				</div>
 			)}
 		</WrapperBookmark>
