@@ -1,6 +1,7 @@
 import useStore from '../useStore/useStore';
 import { WrapperBookmark } from '../Form/Form.styled';
 import MySVG from '../SVG/SVG';
+import styled from 'styled-components';
 
 export default function Bookmark() {
 	const updateBookmark = useStore(state => state.updateBookmark);
@@ -8,6 +9,7 @@ export default function Bookmark() {
 	console.log(bookmarkStatus);
 	return (
 		<WrapperBookmark>
+			<p>Liked</p>
 			{bookmarkStatus === 'liked' ? (
 				<div onClick={() => updateBookmark('')}>
 					{' '}
@@ -16,18 +18,19 @@ export default function Bookmark() {
 			) : (
 				<div onClick={() => updateBookmark('liked')}>
 					<MySVG variant="heartEmpty" />
-					<p>Liked</p>
 				</div>
 			)}
+			<p>Disliked</p>
 			{bookmarkStatus === 'disliked' ? (
 				<div onClick={() => updateBookmark('')}>
 					<MySVG variant="brokenHeartFilled" color="#694370" />{' '}
 				</div>
 			) : (
 				<div onClick={() => updateBookmark('disliked')}>
-					<MySVG variant="brokenHeartEmpty" /> <p>Disliked</p>
+					<MySVG variant="brokenHeartEmpty" />
 				</div>
 			)}
+			<p>Tbr</p>
 			{bookmarkStatus === 'tbr' ? (
 				<div onClick={() => updateBookmark('')}>
 					<MySVG variant="bookFilled" color="#694370" />{' '}
@@ -35,7 +38,6 @@ export default function Bookmark() {
 			) : (
 				<div onClick={() => updateBookmark('tbr')}>
 					<MySVG variant="bookEmpty" />
-					<p>Tbr</p>
 				</div>
 			)}
 		</WrapperBookmark>
