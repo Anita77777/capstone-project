@@ -20,7 +20,7 @@ const useStore = create(
 				],
 			})),
 
-		deleteBooks: id => {
+		deleteBook: id => {
 			set(state => {
 				return {
 					newBooks: state.newBooks.filter(books => books.id !== id),

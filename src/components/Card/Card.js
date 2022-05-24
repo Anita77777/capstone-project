@@ -3,7 +3,7 @@ import { CardContainer } from '../Card/Card.styled';
 
 export default function Card() {
 	const newBooks = useStore(state => state.newBooks);
-	const deleteBooks = useStore(state => state.deleteBooks);
+	const deleteBook = useStore(state => state.deleteBook);
 
 	return (
 		<ul>
@@ -20,7 +20,7 @@ export default function Card() {
 								type="button"
 								variant="delete"
 								onClick={() => {
-									deleteBooks(books.id);
+									deleteBook(books.id);
 								}}
 							>
 								Delete
