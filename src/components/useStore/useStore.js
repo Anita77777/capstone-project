@@ -16,6 +16,7 @@ const useStore = create(
 						comment: books.comment,
 						selection: books.selection,
 						series: books.series,
+						bookmarkStatus: books.bookmarkStatus,
 					},
 				],
 			})),
@@ -26,6 +27,10 @@ const useStore = create(
 					newBooks: state.newBooks.filter(books => books.id !== id),
 				};
 			});
+		},
+		bookmarkStatus: null,
+		updateBookmark: bookmarkStatus => {
+			set({ bookmarkStatus });
 		},
 	}))
 );
