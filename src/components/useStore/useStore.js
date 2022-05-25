@@ -28,9 +28,9 @@ const useStore = create(
 				};
 			});
 		},
-		bookmarkStatus: '',
-		updateBookmark: status => {
-			set({ bookmarkStatus: status });
+		bookmarkStatus: null,
+		updateBookmark: bookmarkStatus => {
+			set({ bookmarkStatus });
 		},
 	}))
 );

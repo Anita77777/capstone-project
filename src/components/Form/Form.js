@@ -8,6 +8,7 @@ import Bookmark from '../Button/BookmarkButton';
 export default function Form() {
 	const addNewBook = useStore(state => state.addNewBook);
 	const bookmarkStatus = useStore(state => state.bookmarkStatus);
+	const updateBookmark = useStore(state => state.updateBookmark);
 
 	const {
 		register,
@@ -17,12 +18,12 @@ export default function Form() {
 	} = useForm();
 
 	const onSubmit = book => {
-		const newBook = {
+		addNewBook({
 			...book,
-			bookmarkStatus: bookmarkStatus,
-		};
-		addNewBook(newBook);
+			bookmarkStatus,
+		});
 		reset();
+		updateBookmark(null);
 	};
 
 	return (
