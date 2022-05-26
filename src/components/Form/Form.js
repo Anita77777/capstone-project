@@ -54,7 +54,7 @@ export default function Form() {
 				<Label htmlFor="Comment">Comment</Label>
 				<Formcomment
 					aria-invalid={errors.Comment ? 'true' : 'false'}
-					{...register('comment', { required: true, maxLength: 100 })}
+					{...register('comment', { required: true })}
 					required
 					name="comment"
 					type="text"

@@ -17,6 +17,7 @@ const useStore = create(
 						selection: books.selection,
 						series: books.series,
 						bookmarkStatus: books.bookmarkStatus,
+						edit: false,
 					},
 				],
 			})),
@@ -31,6 +32,21 @@ const useStore = create(
 		bookmarkStatus: null,
 		updateBookmark: bookmarkStatus => {
 			set({ bookmarkStatus });
+		},
+
+		editCard: id => {
+			set(state => {
+				return {
+					newBooks: state.newBooks.map(books =>
+						books.id === id
+							? {
+									...books,
+									edit: !books.edit,
+							  }
+							: books
+					),
+				};
+			});
 		},
 	}))
 );
