@@ -36,7 +36,7 @@ export default function Card() {
 									editCard(books.id);
 								}}
 							>
-								{editCard ? 'Save' : 'Edit'}
+								{books.edit ? 'Save' : 'Edit'}
 							</button>
 						</li>
 					</CardContainer>

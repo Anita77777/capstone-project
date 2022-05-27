@@ -41,6 +41,12 @@ const useStore = create(
 						books.id === id
 							? {
 									...books,
+									author: books.author,
+									title: books.title,
+									comment: books.comment,
+									selection: books.selection,
+									series: books.series,
+									bookmarkStatus: books.bookmarkStatus,
 									edit: !books.edit,
 							  }
 							: books

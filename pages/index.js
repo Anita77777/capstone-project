@@ -1,5 +1,5 @@
 import Form from '../src/components/Form/Form';
-
+import useStore from '../src/components/useStore/useStore';
 import dynamic from 'next/dynamic';
 
 export default function Home() {
@@ -8,10 +8,11 @@ export default function Home() {
 		ssr: false, // This line is important.
 	});
 
+	const edit = useStore(state => state.edit);
 	return (
 		<div>
 			<Form />
-			<Card />
+			{!edit && <Card />}
 		</div>
 	);
 }
