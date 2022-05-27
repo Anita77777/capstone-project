@@ -4,6 +4,8 @@ import { CardContainer } from '../Card/Card.styled';
 export default function Card() {
 	const newBooks = useStore(state => state.newBooks);
 	const deleteBook = useStore(state => state.deleteBook);
+	const controlEdit = useStore(state => state.controlEdit);
+	const editComment = useStore(state => state.editComment);
 
 	return (
 		<ul>
@@ -14,9 +16,20 @@ export default function Card() {
 							<p>{books.bookmarkStatus}</p>
 							<p>Author: {books.author}</p>
 							<p>Title: {books.title}</p>
-
-							<p>{books.comment}</p>
+							{books.edit ? (
+								<input
+									type="text"
+									value={books.comment}
+									onChange={event => {
+										controlEdit(books.id, event.target.value);
+									}}
+								/>
+							) : (
+								<span>{books.comment}</span>
+							)}
 							<p>{books.selection}</p>
+							<p>{books.edit}</p>
+
 							<button
 								type="button"
 								variant="delete"
@@ -25,6 +38,16 @@ export default function Card() {
 								}}
 							>
 								Delete
+							</button>
+
+							<button
+								type="button"
+								variant="edit"
+								onClick={() => {
+									editComment(books.id);
+								}}
+							>
+								{books.edit ? 'Save' : 'Edit'}
 							</button>
 						</li>
 					</CardContainer>

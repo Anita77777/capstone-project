@@ -21,6 +21,22 @@ const useStore = create(
 				],
 			})),
 
+		editComment: id => {
+			set(state => {
+				return {
+					newBooks: state.newBooks.map(books =>
+						books.id === id
+							? {
+									...books,
+
+									edit: !books.edit,
+							  }
+							: books
+					),
+				};
+			});
+		},
+
 		deleteBook: id => {
 			set(state => {
 				return {
@@ -31,6 +47,22 @@ const useStore = create(
 		bookmarkStatus: null,
 		updateBookmark: bookmarkStatus => {
 			set({ bookmarkStatus });
+		},
+
+		controlEdit: (id, comment) => {
+			set(state => {
+				return {
+					newBooks: state.newBooks.map(books =>
+						books.id === id
+							? {
+									...books,
+
+									comment,
+							  }
+							: books
+					),
+				};
+			});
 		},
 	}))
 );
