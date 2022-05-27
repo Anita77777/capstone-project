@@ -17,10 +17,25 @@ const useStore = create(
 						selection: books.selection,
 						series: books.series,
 						bookmarkStatus: books.bookmarkStatus,
-						edit: false,
 					},
 				],
 			})),
+
+		editComment: id => {
+			set(state => {
+				return {
+					newBooks: state.newBooks.map(books =>
+						books.id === id
+							? {
+									...books,
+
+									edit: !books.edit,
+							  }
+							: books
+					),
+				};
+			});
+		},
 
 		deleteBook: id => {
 			set(state => {
@@ -34,20 +49,15 @@ const useStore = create(
 			set({ bookmarkStatus });
 		},
 
-		editCard: id => {
+		controlEdit: (id, comment) => {
 			set(state => {
 				return {
 					newBooks: state.newBooks.map(books =>
 						books.id === id
 							? {
 									...books,
-									author: books.author,
-									title: books.title,
-									comment: books.comment,
-									selection: books.selection,
-									series: books.series,
-									bookmarkStatus: books.bookmarkStatus,
-									edit: !books.edit,
+
+									comment,
 							  }
 							: books
 					),

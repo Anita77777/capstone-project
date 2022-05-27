@@ -1,10 +1,11 @@
 import useStore from '../useStore/useStore';
-import { CardContainer } from './Card.styled';
+import { CardContainer } from '../Card/Card.styled';
 
 export default function Card() {
 	const newBooks = useStore(state => state.newBooks);
 	const deleteBook = useStore(state => state.deleteBook);
-	const editCard = useStore(state => state.editCard);
+	const controlEdit = useStore(state => state.controlEdit);
+	const editComment = useStore(state => state.editComment);
 
 	return (
 		<ul>
@@ -15,7 +16,17 @@ export default function Card() {
 							<p>{books.bookmarkStatus}</p>
 							<p>Author: {books.author}</p>
 							<p>Title: {books.title}</p>
-							<p>{books.comment}</p>
+							{books.edit ? (
+								<input
+									type="text"
+									value={books.comment}
+									onChange={event => {
+										controlEdit(books.id, event.target.value);
+									}}
+								/>
+							) : (
+								<span>{books.comment}</span>
+							)}
 							<p>{books.selection}</p>
 							<p>{books.edit}</p>
 
@@ -33,7 +44,7 @@ export default function Card() {
 								type="button"
 								variant="edit"
 								onClick={() => {
-									editCard(books.id);
+									editComment(books.id);
 								}}
 							>
 								{books.edit ? 'Save' : 'Edit'}
