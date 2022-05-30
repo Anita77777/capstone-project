@@ -11,7 +11,7 @@ export default function Form() {
 	const addNewBook = useStore(state => state.addNewBook);
 	const bookmarkStatus = useStore(state => state.bookmarkStatus);
 	const updateBookmark = useStore(state => state.updateBookmark);
-	const chosenEntrys = useStore(state => state.chosenEntrys);
+	const foundEntrys = useStore(state => state.foundEntrys);
 
 	const {
 		register,
@@ -22,17 +22,17 @@ export default function Form() {
 	} = useForm();
 
 	useEffect(() => {
-		if (chosenEntrys) {
-			setValue('title', chosenEntrys.title);
-			setValue('author', chosenEntrys.author);
+		if (foundEntrys) {
+			setValue('title', foundEntrys.title);
+			setValue('author', foundEntrys.author);
 		}
-	}, [chosenEntrys, setValue]);
+	}, [foundEntrys, setValue]);
 
 	const onSubmit = book => {
 		addNewBook({
 			...book,
 			bookmarkStatus,
-			chosenEntrys,
+			foundEntrys,
 		});
 		reset();
 		updateBookmark(null);
@@ -48,7 +48,6 @@ export default function Form() {
 					{...register('author', { required: true, maxLength: 30 })}
 					required
 					name="author"
-					value={chosenEntrys.author}
 					type="text"
 					id="author"
 					autoComplete="off"
@@ -60,7 +59,6 @@ export default function Form() {
 					{...register('title', { required: true, maxLength: 30 })}
 					required
 					name="title"
-					value={chosenEntrys.title}
 					type="text"
 					id="title"
 					autoComplete="off"

@@ -5,8 +5,8 @@ import useStore from '../useStore/useStore';
 export default function SearchBar() {
 	const [searchTerm, setSearchTerm] = useState('');
 	const findEntry = useStore(state => state.findEntry);
-	const chosenEntrys = useStore(state => state.chosenEntrys);
-	console.log(chosenEntrys);
+	const foundEntrys = useStore(state => state.foundEntrys);
+	console.log(foundEntrys);
 
 	return (
 		<section>

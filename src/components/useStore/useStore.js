@@ -40,17 +40,17 @@ const useStore = create(
 
 		foundEntrys: [],
 
-		chooseEntry: foundEntrys => {
+		chooseEntry: searchTerm => {
 			set(state => {
 				return {
-					chosenEntrys: state.foundEntrys.filter(
+					chosenEntrys: state.entries.map(
 						entry =>
-							Object.values(entry).filter(value => value.includes(foundEntrys))
-								.length > 0
+							Object.values(entry).map(value => value.includes(searchTerm)).length > 0
 					),
 				};
 			});
 		},
+		chosenEntrys: [],
 
 		fetchBooks: async searchTerm => {
 			const result = await axios.get(
