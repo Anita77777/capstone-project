@@ -20,7 +20,38 @@ const useStore = create(
 				],
 			})),
 
-		books: { items: [] },
+		entries: [
+			{ author: 'Mariana Zapata', title: 'Luna and the lie' },
+			{ author: 'Charlotte Bronte', title: 'Jane Eyre' },
+			{ author: 'Saffron A. Kent', title: 'Unrequited' },
+		],
+
+		findEntry: searchTerm => {
+			set(state => {
+				return {
+					foundEntrys: state.entries.filter(
+						entry =>
+							Object.values(entry).filter(value => value.includes(searchTerm))
+								.length > 0
+					),
+				};
+			});
+		},
+
+		foundEntrys: [],
+
+		chooseEntry: foundEntrys => {
+			set(state => {
+				return {
+					chosenEntrys: state.foundEntrys.filter(
+						entry =>
+							Object.values(entry).filter(value => value.includes(foundEntrys))
+								.length > 0
+					),
+				};
+			});
+		},
+
 		fetchBooks: async searchTerm => {
 			const result = await axios.get(
 				`https://www.googleapis.com/books/v1/volumes?q=${searchTerm}`

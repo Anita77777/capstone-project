@@ -1,6 +1,5 @@
 import useStore from '../useStore/useStore';
 import { CardContainer } from '../Card/Card.styled';
-import Image from 'next/Image';
 
 export default function Card() {
 	const newBooks = useStore(state => state.newBooks);
@@ -17,10 +16,6 @@ export default function Card() {
 							<p>{books.bookmarkStatus}</p>
 							<p>Author: {books.author}</p>
 							<p>Title: {books.title}</p>
-							<Image
-								alt={`${book.volumeInfo.title} book`}
-								src={`http://books.google.com/books/content?id=${book.id}&printsec=frontcover&img=1&zoom=1&source=gbs_api`}
-							/>
 
 							{books.edit ? (
 								<input

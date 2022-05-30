@@ -4,54 +4,30 @@ import useStore from '../useStore/useStore';
 
 export default function SearchBar() {
 	const [searchTerm, setSearchTerm] = useState('');
-	const fetchBooks = useStore(state => state.fetchBooks);
-	const books = useStore(state => state.books);
-
-	const onChange = event => {
-		setSearchTerm(event.target.value);
-	};
-
-	const onSearch = searchTerm => {
-		setSearchTerm(searchTerm);
-	};
+	const findEntry = useStore(state => state.findEntry);
+	const chosenEntrys = useStore(state => state.chosenEntrys);
+	console.log(chosenEntrys);
 
 	return (
 		<section>
 			<form
 				onSubmit={event => {
 					event.preventDefault();
-					fetchBooks(searchTerm);
+					findEntry(searchTerm);
 				}}
 			>
 				<label>
-					Search for book
+					Search for books
 					<input
 						type="search"
 						placeholder="search for book"
 						value={searchTerm}
-						onChange={onChange}
+						onChange={event => {
+							setSearchTerm(event.target.value);
+						}}
 					/>
 				</label>
-
-				{books.items
-					.filter(book => {
-						const bookTitle = searchTerm.toLowerCase();
-
-						return (
-							searchTerm &&
-							bookTitle.startsWith(searchTerm) &&
-							bookTitle !== searchTerm
-						);
-					})
-					.slice(0, 20)
-					.map(book => (
-						<li key={book.id} onClick={() => onSearch(book.volumeInfo.title)}>
-							{book.volumeInfo.title}
-						</li>
-					))}
-				<button type="button" onClick={() => onSearch(searchTerm)}>
-					Search
-				</button>
+				<button type="submit">Search</button>
 			</form>
 		</section>
 	);
