@@ -8,16 +8,12 @@ const Cards = dynamic(() => import('../src/components/Cards/Cards'), {
 });
 
 export default function Disliked() {
-	const newBooks = useStore(state => state.newBooks);
-	const dislikedBooks = newBooks.filter(newBook => newBook.bookmarkStatus === 'disliked');
+	const newBook = useStore(state => state.newBooks);
 
 	return (
 		<>
 			<h1>Books I Disliked</h1>
-
-			{dislikedBooks.map(newBook => {
-				return <Cards key={newBook.id} bookmarkStatus="disliked" />;
-			})}
+			<Cards key={newBook.id} bookmarkStatus="disliked" />;
 			<Navbar />
 		</>
 	);

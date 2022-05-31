@@ -8,16 +8,12 @@ const Cards = dynamic(() => import('../src/components/Cards/Cards'), {
 });
 
 export default function Liked() {
-	const newBooks = useStore(state => state.newBooks);
-	const likedBooks = newBooks.filter(newBook => newBook.bookmarkStatus === 'liked');
+	const newBook = useStore(state => state.newBooks);
 
 	return (
 		<>
 			<h1>Books I Liked</h1>
-
-			{likedBooks.map(newBook => {
-				return <Cards key={newBook.id} bookmarkStatus="liked" />;
-			})}
+			<Cards key={newBook.id} bookmarkStatus="liked" />;
 			<Navbar />
 		</>
 	);
