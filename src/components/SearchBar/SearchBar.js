@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-child-element-spacing */
 import { useState } from 'react';
 import useStore from '../useStore/useStore';
 
@@ -17,7 +16,7 @@ export default function SearchBar() {
 				}}
 			>
 				<label>
-					Search for books
+					Search for books{' '}
 					<input
 						type="search"
 						placeholder="search for book"
