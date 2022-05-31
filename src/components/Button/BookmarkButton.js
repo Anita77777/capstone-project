@@ -25,7 +25,12 @@ export default function Bookmark() {
 					<MySVG variant="brokenHeartFilled" color="#694370" />
 				</BookmarkButton>
 			) : (
-				<BookmarkButton type="button" onClick={() => updateBookmark('disliked')}>
+				<BookmarkButton
+					type="button"
+					onClick={() => {
+						updateBookmark('disliked');
+					}}
+				>
 					<MySVG variant="brokenHeartEmpty" />
 				</BookmarkButton>
 			)}
