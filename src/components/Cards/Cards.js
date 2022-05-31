@@ -1,15 +1,17 @@
 import useStore from '../useStore/useStore';
-import { CardContainer } from '../Card/Card.styled';
+import { CardContainer } from './Cards.styled';
 
-export default function Card() {
+export default function Cards({ bookmarkStatus }) {
 	const newBooks = useStore(state => state.newBooks);
 	const deleteBook = useStore(state => state.deleteBook);
 	const controlEdit = useStore(state => state.controlEdit);
 	const editComment = useStore(state => state.editComment);
 
+	const booksToRender = newBooks.filter(newBook => newBook.bookmarkStatus === bookmarkStatus);
+
 	return (
 		<ul>
-			{newBooks.map(books => {
+			{booksToRender.map(books => {
 				return (
 					<CardContainer key={books.id}>
 						<li>
