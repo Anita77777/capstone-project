@@ -2,7 +2,7 @@ import Link from 'next/link';
 import MySVG from '../SVG/SVG';
 import { useRouter } from 'next/router';
 
-export default function Navbar() {
+export default function Footer() {
 	const router = useRouter();
 	return (
 		<footer>
