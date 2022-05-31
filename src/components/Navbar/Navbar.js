@@ -1,31 +1,37 @@
 import Link from 'next/link';
 import MySVG from '../SVG/SVG';
+import { useRouter } from 'next/router';
 
 export default function Navbar() {
+	const router = useRouter();
 	return (
 		<footer>
 			<Link passHref href="/">
-				<button type="button" variant="nav">
+				<a aria-label="form" pathName={router.pathname}>
+					Form
 					<MySVG variant="form" />
-				</button>
+				</a>
 			</Link>
 
 			<Link passHref href="/liked">
-				<button type="button" variant="nav">
+				<a aria-label="liked" pathName={router.pathname}>
+					Liked
 					<MySVG variant="heartFilled" />
-				</button>
+				</a>
 			</Link>
 
 			<Link passHref href="/disliked">
-				<button type="button" variant="nav">
+				<a aria-label="disliked" pathName={router.pathname}>
+					Disliked
 					<MySVG variant="brokenHeartFilled" />
-				</button>
+				</a>
 			</Link>
 
 			<Link passHref href="/tbr">
-				<button type="button" variant="nav">
+				<a aria-label="toBeRead" pathName={router.pathname}>
+					TBR
 					<MySVG variant="bookFilled" />
-				</button>
+				</a>
 			</Link>
 		</footer>
 	);

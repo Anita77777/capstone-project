@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic';
-import Navbar from '../src/components/Navbar/Navbar';
+
 import useStore from '../src/components/useStore/useStore';
 
 //delete on mongoDB integration, only used for persist/localStorage (dynamic import with NO SSR form next.js docu --> https://nextjs.org/docs/advanced-features/dynamic-import)
@@ -14,7 +14,6 @@ export default function WantToRead() {
 		<>
 			<h1>Books I want to Read</h1>
 			<Cards key={newBook.id} bookmarkStatus="tbr" />;
-			<Navbar />
 		</>
 	);
 }
