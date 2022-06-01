@@ -13,7 +13,7 @@ export default function WantToRead() {
 	return (
 		<>
 			<h1>Books I want to Read</h1>
-			<Cards key={newBook.id} bookmarkStatus="tbr" />;
+			<Cards key={newBook.id} bookmarkStatus="tbr" />
 		</>
 	);
 }
