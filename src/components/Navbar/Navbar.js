@@ -2,10 +2,10 @@ import Link from 'next/link';
 import MySVG from '../SVG/SVG';
 import { useRouter } from 'next/router';
 
-export default function Footer() {
+export default function Navbar() {
 	const router = useRouter();
 	return (
-		<footer>
+		<nav>
 			<Link passHref href="/">
 				<a aria-label="form" pathName={router.pathname}>
 					Form
@@ -33,6 +33,6 @@ export default function Footer() {
 					<MySVG variant="bookFilled" />
 				</a>
 			</Link>
-		</footer>
+		</nav>
 	);
 }
