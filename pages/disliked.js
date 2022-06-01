@@ -13,7 +13,7 @@ export default function Disliked() {
 	return (
 		<>
 			<h1>Books I Disliked</h1>
-			<Cards key={newBook.id} bookmarkStatus="disliked" />;
+			<Cards key={newBook.id} bookmarkStatus="disliked" />
 		</>
 	);
 }

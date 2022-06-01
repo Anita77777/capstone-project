@@ -7,6 +7,6 @@ export const decorators = [
         <GlobalStyles />
         <Story />
       </>
-    );
+    )
   },
- ];
+ ]

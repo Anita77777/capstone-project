@@ -13,7 +13,7 @@ export default function Liked() {
 	return (
 		<>
 			<h1>Books I Liked</h1>
-			<Cards key={newBook.id} bookmarkStatus="liked" />;
+			<Cards key={newBook.id} bookmarkStatus="liked" />
 		</>
 	);
 }
