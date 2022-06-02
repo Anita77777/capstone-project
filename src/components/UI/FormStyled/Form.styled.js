@@ -20,6 +20,7 @@ export const Formfield = styled.input`
 	flex-wrap: wrap;
 	height: 3rem;
 	width: 100vw;
+	gap: 2rem;
 	background-color: whitesmoke;
 	border: solid palevioletred;
 	border-width: 0.3rem;
@@ -35,9 +36,9 @@ export const Formcomment = styled.textarea`
 	align-content: start;
 	word-wrap: wrap;
 	background-color: white;
-	margin-bottom: 3rem;
+	margin-bottom: 4rem;
 	border: solid palevioletred;
-	border-width: 0.5rem;
+	border-width: 0.3rem;
 `;
 
 export const Label = styled.label`
