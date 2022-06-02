@@ -1,5 +1,5 @@
 import React from 'react';
-import { SubmitButton } from './SubmitButton.styled';
+import { SubmitButton } from '../Button/SubmitButton.styled';
 
 export default {
 	title: 'Components/SubmitButton',

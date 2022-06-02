@@ -1,8 +1,8 @@
 import { useForm } from 'react-hook-form';
-import { Container, Formcomment, Formfield, Label } from './Form.styled';
-import { SubmitButton } from '../Button/SubmitButton.styled';
+import { Container, Formcomment, Formfield, Label, LabelRadio } from '../UI/FormStyled/Form.styled';
+import { SubmitButton } from '../UI/ButtonStyled/SubmitButton.styled';
 import useStore from '../useStore/useStore';
-import { Fieldset, LabelRadio } from '../Button/RadioButtonstyled';
+import { Fieldset } from '../UI/ButtonStyled/RadioButtonstyled';
 import Bookmark from '../Button/BookmarkButton';
 
 export default function Form() {
@@ -29,7 +29,7 @@ export default function Form() {
 	return (
 		<Container>
 			<form onSubmit={handleSubmit(onSubmit)}>
-				<Label htmlFor="Author">Author</Label>
+				<Label>Author</Label>
 				<Formfield
 					aria-invalid={errors.name ? 'true' : 'false'}
 					{...register('author', { required: true, maxLength: 30 })}
@@ -40,7 +40,7 @@ export default function Form() {
 					autoComplete="off"
 				/>
 
-				<Label htmlFor="Booktitle">Booktitle</Label>
+				<Label>Booktitle</Label>
 				<Formfield
 					aria-invalid={errors.name ? 'true' : 'false'}
 					{...register('title', { required: true, maxLength: 30 })}
@@ -51,7 +51,7 @@ export default function Form() {
 					autoComplete="off"
 				/>
 
-				<Label htmlFor="Comment">Comment</Label>
+				<Label>Comment</Label>
 				<Formcomment
 					aria-invalid={errors.Comment ? 'true' : 'false'}
 					{...register('comment', { required: true })}
@@ -73,7 +73,7 @@ export default function Form() {
 						id="standalone"
 						value="standalone"
 					/>
-					<LabelRadio htmlFor="standalone">Standalone</LabelRadio>
+					<LabelRadio>Standalone</LabelRadio>
 
 					<input
 						{...register('selection')}
@@ -82,7 +82,7 @@ export default function Form() {
 						id="series"
 						value="series"
 					/>
-					<LabelRadio htmlFor="series">Series</LabelRadio>
+					<LabelRadio>Series</LabelRadio>
 				</Fieldset>
 				<Bookmark />
 
