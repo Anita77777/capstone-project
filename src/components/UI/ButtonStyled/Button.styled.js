@@ -16,13 +16,7 @@ export const Button = styled.button`
 			border: none;
 			position: relative;
 			margin-top: 20px;
-			background: linear-gradient(
-				45deg,
-				rgba(59, 173, 227, 1) 0%,
-				rgba(87, 111, 230, 1) 25%,
-				rgba(152, 68, 183, 1) 51%,
-				rgba(255, 53, 127, 1) 100%
-			);
+			background: linear-gradient(45deg, var(--gradient));
 		`}
 
 	${({ variant = 'edit' }) =>
@@ -40,13 +34,7 @@ export const Button = styled.button`
 			border: none;
 			position: relative;
 			margin-top: 20px;
-			background: linear-gradient(
-				45deg,
-				rgba(59, 173, 227, 1) 0%,
-				rgba(87, 111, 230, 1) 25%,
-				rgba(152, 68, 183, 1) 51%,
-				rgba(255, 53, 127, 1) 100%
-			);
+			background: linear-gradient(45deg, var(--gradient));
 		`}
 
 
@@ -65,14 +53,7 @@ ${({ variant = 'submit' }) =>
 			margin-top: 2rem;
 			position: absolute;
 			margin-left: 35vw;
-
-			background: linear-gradient(
-				45deg,
-				rgba(59, 173, 227, 1) 0%,
-				rgba(87, 111, 230, 1) 25%,
-				rgba(152, 68, 183, 1) 51%,
-				rgba(255, 53, 127, 1) 100%
-			);
+			background: linear-gradient(45deg, var(--gradient));
 
 			span {
 				position: relative;
