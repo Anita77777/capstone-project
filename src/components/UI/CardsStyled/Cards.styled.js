@@ -29,7 +29,7 @@ export const WrapperComment = styled.input`
 export const CardWrapper = styled.ul`
 	display: flex;
 	justify-content: center;
-	margin-top: 2rem;
+	margin-top: 5rem;
 	padding: 1rem;
 	width: 37rem;
 `;
