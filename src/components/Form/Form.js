@@ -1,8 +1,8 @@
 import { useForm } from 'react-hook-form';
-import { Container, Formcomment, Formfield, Label, LabelRadio } from '../UI/FormStyled/Form.styled';
+import { Container, Formcomment, Formfield, Label } from '../UI/FormStyled/Form.styled';
 import { SubmitButton } from '../UI/ButtonStyled/SubmitButton.styled';
 import useStore from '../useStore/useStore';
-import { Fieldset } from '../UI/ButtonStyled/RadioButtonstyled';
+import { Fieldset, LabelRadio } from '../UI/ButtonStyled/RadioButtonstyled';
 import Bookmark from '../Button/BookmarkButton';
 
 export default function Form() {
@@ -86,7 +86,7 @@ export default function Form() {
 				</Fieldset>
 				<Bookmark />
 
-				<SubmitButton type="submit">submit</SubmitButton>
+				<SubmitButton type="submit">Add to library</SubmitButton>
 			</form>
 		</Container>
 	);

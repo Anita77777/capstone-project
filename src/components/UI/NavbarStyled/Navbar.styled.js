@@ -10,7 +10,7 @@ const NavbarStyled = styled.nav`
 	align-items: center;
 	justify-content: space-around;
 	padding: 10px;
-	z-index: 3;
+	z-index: 1;
 	height: 7vh;
 `;
 

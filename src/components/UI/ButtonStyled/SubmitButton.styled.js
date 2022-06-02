@@ -1,14 +1,19 @@
 import styled from 'styled-components';
 
 export const SubmitButton = styled.button`
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	color: white;
 	font-weight: bold;
-	width: 100px;
-	height: 30px;
-	padding: 5px;
+	width: 11rem;
+	height: 4rem;
+	padding: 0.5rem;
 	border: none;
-	margin-top: 15px;
+	margin-top: 2rem;
+	position: absolute;
 	margin-left: 35vw;
+
 	background: linear-gradient(
 		45deg,
 		rgba(59, 173, 227, 1) 0%,

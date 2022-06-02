@@ -1,28 +1,14 @@
-import Card from '../Card/Card';
-
-// eslint-disable-next-line import/no-anonymous-default-export
+import Cards from '../Cards/Cards';
 export default {
-	title: 'Components/Card/Card',
-	component: Card,
+	title: 'Components/Cards',
+	component: Cards,
 	decorators: [
 		Story => {
-			return (
-				<div style={{ padding: '5em', maxWidth: '500px' }}>
-					<Story />
-				</div>
-			);
+			return <Story />;
 		},
 	],
 };
 
-const props = {
-	books: {
-		author: 'Paolo',
-		title: 'The Alchemist',
-		comment: 'Favorite Book of all times',
-	},
-};
-
 export function Default() {
-	return <Card {...props.books} />;
+	return <Cards />;
 }

@@ -27,6 +27,7 @@ export const Formfield = styled.input`
 	border: solid palevioletred;
 	border-width: 0.3rem;
 	position: relative;
+	margin-bottom: 2rem;
 `;
 
 export const Formcomment = styled.textarea`
@@ -53,16 +54,4 @@ export const Label = styled.label`
 	justify-content: center;
 	font-size: 2rem;
 	margin-top: 1rem;
-`;
-
-export const LabelRadio = styled.label`
-	display: flex;
-	align-self: auto;
-	font-size: 1.6rem;
-	display: flex;
-	color: white;
-	color: white;
-	width: 40vw;
-	margin-right: -7px;
-	padding: 1rem;
 `;
