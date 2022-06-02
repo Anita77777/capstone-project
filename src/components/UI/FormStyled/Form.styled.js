@@ -16,36 +16,28 @@ export const Formfield = styled.input`
 	align-items: flex-start;
 	flex-direction: column;
 	color: black;
-	font-weight: bold;
 	display: flex;
 	flex-wrap: wrap;
 	height: 3rem;
-	gap: 2rem;
-	width: 80vw;
-	margin-left: 8rem;
+	width: 100vw;
 	background-color: whitesmoke;
 	border: solid palevioletred;
 	border-width: 0.3rem;
-	position: relative;
-	margin-bottom: 2rem;
+	margin-bottom: 2.5rem;
 `;
 
 export const Formcomment = styled.textarea`
 	display: flex;
 	text-align: start;
 	color: black;
-	font-weight: bold;
 	height: 10rem;
-	width: 80vw;
+	width: 100vw;
 	align-content: start;
-	margin-left: 8rem;
-	gap: 2rem;
 	word-wrap: wrap;
 	background-color: white;
-	margin-bottom: 4rem;
+	margin-bottom: 3rem;
 	border: solid palevioletred;
-	border-width: 0.3rem;
-	position: relative;
+	border-width: 0.5rem;
 `;
 
 export const Label = styled.label`
@@ -53,6 +45,4 @@ export const Label = styled.label`
 	color: white;
 	justify-content: center;
 	font-size: 2rem;
-	margin-top: 2rem;
-	padding: 2rem;
 `;

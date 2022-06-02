@@ -4,9 +4,9 @@ export const WrapperFieldset = styled.div`
 	display: grid;
 	grid-template-rows: repeat(1, 1fr);
 	justify-content: center;
-	width: 80vw;
+	width: 100vw;
 	padding: 1rem;
-	margin-left: 8rem;
+
 	background: linear-gradient(
 		45deg,
 		rgba(59, 173, 227, 1) 0%,

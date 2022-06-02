@@ -10,9 +10,8 @@ export const BookmarkButton = styled.button`
 export const WrapperBookmark = styled.section`
 	display: flex;
 	justify-content: space-evenly;
-	width: 80vw;
+	width: 100vw;
 	margin-top: 3rem;
-	margin-left: 10vw;
 	margin-bottom: 1rem;
 	background-color: white;
 	padding: 0.4rem;
