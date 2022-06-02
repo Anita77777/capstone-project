@@ -4,18 +4,15 @@ export const CardContainer = styled.li`
 	display: flex;
 	flex-direction: column;
 	align-self: center;
-	padding: 30px;
-	margin-top: 70px;
 	border-radius: 20px;
-	width: 33rem;
-	display: flex;
-	flex-direction: column;
+	width: inherit;
 	background-color: white;
 	text-align: center;
 	line-height: 30px;
 	color: black;
 	border: solid palevioletred;
 	border-width: 0.3rem;
+	padding: 5rem;
 `;
 
 export const WrapperComment = styled.input`
@@ -29,8 +26,11 @@ export const WrapperComment = styled.input`
 	overflow-wrap: break-word;
 `;
 
-export const CardGrid = styled.ul`
+export const CardWrapper = styled.ul`
 	display: flex;
-	flex-direction: column;
+	margin-left: 25rem;
 	justify-content: center;
+	margin-top: 7rem;
+	padding: 1rem;
+	width: 33rem;
 `;

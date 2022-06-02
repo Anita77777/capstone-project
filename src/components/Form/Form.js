@@ -1,9 +1,9 @@
 import { useForm } from 'react-hook-form';
 import { Container, Formcomment, Formfield, Label } from '../UI/FormStyled/Form.styled';
-import { SubmitButton } from '../UI/ButtonStyled/SubmitButton.styled';
 import useStore from '../useStore/useStore';
-import { Fieldset, LabelRadio } from '../UI/ButtonStyled/RadioButtonstyled';
+import { Fieldset, LabelRadio, WrapperFieldset } from '../UI/ButtonStyled/RadioButtonstyled';
 import Bookmark from '../Button/BookmarkButton';
+import { Button } from '../UI/ButtonStyled/Button.styled';
 
 export default function Form() {
 	const addNewBook = useStore(state => state.addNewBook);
@@ -37,6 +37,7 @@ export default function Form() {
 					name="author"
 					type="text"
 					id="author"
+					placeholder="Add the Auhor's name here"
 					autoComplete="off"
 				/>
 
@@ -48,6 +49,7 @@ export default function Form() {
 					name="title"
 					type="text"
 					id="title"
+					placeholder="Add the title here"
 					autoComplete="off"
 				/>
 
@@ -59,34 +61,36 @@ export default function Form() {
 					name="comment"
 					type="text"
 					id="comment"
+					placeholder="Insert your notes, key details and scenes here"
 					autoComplete="off"
 				/>
+				<WrapperFieldset>
+					<Fieldset
+						aria-invalid={errors.selection ? 'true' : 'false'}
+						{...register('selection', { required: true })}
+					>
+						<input
+							{...register('selection')}
+							name="selection"
+							type="radio"
+							id="standalone"
+							value="standalone"
+						/>
+						<LabelRadio>Standalone</LabelRadio>
 
-				<Fieldset
-					aria-invalid={errors.selection ? 'true' : 'false'}
-					{...register('selection', { required: true })}
-				>
-					<input
-						{...register('selection')}
-						name="selection"
-						type="radio"
-						id="standalone"
-						value="standalone"
-					/>
-					<LabelRadio>Standalone</LabelRadio>
-
-					<input
-						{...register('selection')}
-						name="selection"
-						type="radio"
-						id="series"
-						value="series"
-					/>
-					<LabelRadio>Series</LabelRadio>
-				</Fieldset>
+						<input
+							{...register('selection')}
+							name="selection"
+							type="radio"
+							id="series"
+							value="series"
+						/>
+						<LabelRadio>Series</LabelRadio>
+					</Fieldset>
+				</WrapperFieldset>
 				<Bookmark />
 
-				<SubmitButton type="submit">Add to library</SubmitButton>
+				<Button type="submit">Add to library</Button>
 			</form>
 		</Container>
 	);

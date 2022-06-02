@@ -11,7 +11,7 @@ const NavbarStyled = styled.nav`
 	justify-content: space-around;
 	padding: 10px;
 	z-index: 1;
-	height: 7vh;
+	height: 5rem;
 `;
 
 export { NavbarStyled };

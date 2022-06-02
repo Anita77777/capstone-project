@@ -20,9 +20,9 @@ export const Formfield = styled.input`
 	display: flex;
 	flex-wrap: wrap;
 	height: 3rem;
-	margin-top: 2rem;
+	gap: 2rem;
 	width: 80vw;
-	margin-left: 10vw;
+	margin-left: 8rem;
 	background-color: whitesmoke;
 	border: solid palevioletred;
 	border-width: 0.3rem;
@@ -38,8 +38,8 @@ export const Formcomment = styled.textarea`
 	height: 10rem;
 	width: 80vw;
 	align-content: start;
-	margin-left: 10vw;
-	margin-top: 2rem;
+	margin-left: 8rem;
+	gap: 2rem;
 	word-wrap: wrap;
 	background-color: white;
 	margin-bottom: 4rem;
@@ -53,5 +53,6 @@ export const Label = styled.label`
 	color: white;
 	justify-content: center;
 	font-size: 2rem;
-	margin-top: 1rem;
+	margin-top: 2rem;
+	padding: 2rem;
 `;

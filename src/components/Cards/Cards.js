@@ -1,8 +1,8 @@
 import useStore from '../useStore/useStore';
-import { CardGrid, CardContainer, WrapperComment } from '../UI/CardsStyled/Cards.styled';
+import { CardContainer, WrapperComment, CardWrapper } from '../UI/CardsStyled/Cards.styled';
 import Typography from '../UI/Typography/Typography';
-import { EditButton } from '../UI/ButtonStyled/EditButton.styled';
-import { DeleteButton } from '../UI/ButtonStyled/DeleteButton.styled';
+
+import { Button } from '../UI/ButtonStyled/Button.styled';
 
 export default function Cards({ bookmarkStatus }) {
 	const newBooks = useStore(state => state.newBooks);
@@ -13,7 +13,7 @@ export default function Cards({ bookmarkStatus }) {
 	const booksToRender = newBooks.filter(newBook => newBook.bookmarkStatus === bookmarkStatus);
 
 	return (
-		<CardGrid>
+		<CardWrapper>
 			{booksToRender.map(books => {
 				return (
 					<CardContainer key={books.id}>
@@ -33,7 +33,7 @@ export default function Cards({ bookmarkStatus }) {
 						<Typography variant="p">{books.selection}</Typography>
 						<Typography variant="p">{books.edit}</Typography>
 
-						<EditButton
+						<Button
 							type="button"
 							variant="edit"
 							onClick={() => {
@@ -41,9 +41,9 @@ export default function Cards({ bookmarkStatus }) {
 							}}
 						>
 							{books.edit ? 'Save' : 'Edit'}
-						</EditButton>
+						</Button>
 
-						<DeleteButton
+						<Button
 							type="button"
 							variant="delete"
 							onClick={() => {
@@ -51,10 +51,10 @@ export default function Cards({ bookmarkStatus }) {
 							}}
 						>
 							Delete
-						</DeleteButton>
+						</Button>
 					</CardContainer>
 				);
 			})}
-		</CardGrid>
+		</CardWrapper>
 	);
 }

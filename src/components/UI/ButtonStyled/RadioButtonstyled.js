@@ -1,15 +1,12 @@
 import styled from 'styled-components';
 
-export const Fieldset = styled.fieldset`
-	display: flex;
-	border: none;
-	height: 3rem;
-	display: flex;
-	align-items: center;
-	margin-bottom: 2rem;
-	margin-left: 10vw;
-	padding-left: 2rem;
+export const WrapperFieldset = styled.div`
+	display: grid;
+	grid-template-rows: repeat(1, 1fr);
+	justify-content: center;
 	width: 80vw;
+	padding: 1rem;
+	margin-left: 8rem;
 	background: linear-gradient(
 		45deg,
 		rgba(59, 173, 227, 1) 0%,
@@ -19,11 +16,12 @@ export const Fieldset = styled.fieldset`
 	);
 `;
 
+export const Fieldset = styled.fieldset`
+	border: none;
+`;
+
 export const LabelRadio = styled.label`
-	display: flex;
-	justify-content: space-around;
 	font-size: 1.6rem;
-	display: flex;
 	color: white;
-	padding: 1rem;
+	padding: 20px;
 `;
