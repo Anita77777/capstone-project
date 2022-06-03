@@ -43,13 +43,9 @@ const useStore = create(
 		chooseEntry: id => {
 			set(state => {
 				return {
-					chosenEntrys: {
-						...state.chosenEntrys,
-						chooseEntry: state.foundEntrys.find(
-							entry =>
-								Object.values(entry).find(value => value.includes(id)).length > 0
-						),
-					},
+					chooseEntry: state.foundEntrys.find(
+						entry => Object.values(entry).find(value => value.includes(id)).length > 0
+					),
 				};
 			});
 		},
