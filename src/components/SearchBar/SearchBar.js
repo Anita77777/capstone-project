@@ -1,11 +1,13 @@
 import { useState } from 'react';
-import useStore from '../useStore/useStore';
+
+import useStore, { useHydration } from '../useStore/useStore';
 
 export default function SearchBar() {
 	const [searchTerm, setSearchTerm] = useState('');
 	const findEntry = useStore(state => state.findEntry);
 	const foundEntrys = useStore(state => state.foundEntrys);
 	const chooseEntry = useStore(state => state.chooseEntry);
+	const hydrated = useHydration();
 
 	const handleChange = event => {
 		setSearchTerm(event.target.value);
@@ -30,16 +32,18 @@ export default function SearchBar() {
 				<button type="submit">Search</button>
 
 				<ul>
-					{foundEntrys.map(entry => (
-						<li
-							key={entry.id}
-							author={entry.author}
-							title={entry.title}
-							onClick={() => {
-								chooseEntry(entry.id);
-							}}
-						/>
-					))}
+					{hydrated &&
+						foundEntrys.map(entry => (
+							<li
+								key={entry.id}
+								onClick={() => {
+									console.log('click', entry.id);
+									chooseEntry(entry.id);
+								}}
+							>
+								{entry.author}:{entry.title}
+							</li>
+						))}
 				</ul>
 			</form>
 		</section>

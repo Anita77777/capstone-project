@@ -1,39 +1,30 @@
 import { useForm } from 'react-hook-form';
 import { Container, Formcomment, Formfield, Label } from './Form.styled';
 import { SubmitButton } from '../Button/SubmitButton.styled';
-import useStore from '../useStore/useStore';
+import useStore, { useHydration } from '../useStore/useStore';
 import { Fieldset, LabelRadio } from '../Button/RadioButtonstyled';
 import Bookmark from '../Button/BookmarkButton';
 import SearchBar from '../SearchBar/SearchBar';
-import { useEffect } from 'react';
 
 export default function Form() {
 	const addNewBook = useStore(state => state.addNewBook);
 	const bookmarkStatus = useStore(state => state.bookmarkStatus);
 	const updateBookmark = useStore(state => state.updateBookmark);
-	const chosenEntrys = useStore(state => state.chosenEntrys);
-	console.log(chosenEntrys);
+	const chosenEntry = useStore(state => state.chosenEntry);
+	const hydrated = useHydration();
 
 	const {
 		register,
 		handleSubmit,
 		reset,
-		setValue,
+
 		formState: { errors },
 	} = useForm();
-
-	useEffect(() => {
-		if (chosenEntrys) {
-			setValue('title', chosenEntrys.title);
-			setValue('author', chosenEntrys.author);
-		}
-	}, [chosenEntrys, setValue]);
 
 	const onSubmit = book => {
 		addNewBook({
 			...book,
 			bookmarkStatus,
-			chosenEntrys,
 		});
 		reset();
 		updateBookmark(null);
@@ -48,8 +39,9 @@ export default function Form() {
 					aria-invalid={errors.name ? 'true' : 'false'}
 					{...register('author', { required: true, maxLength: 30 })}
 					required
+					readOnly
 					name="author"
-					value={chosenEntrys}
+					value={(hydrated && chosenEntry?.author) ?? ''}
 					type="text"
 					id="author"
 					autoComplete="off"
@@ -60,8 +52,9 @@ export default function Form() {
 					aria-invalid={errors.name ? 'true' : 'false'}
 					{...register('title', { required: true, maxLength: 30 })}
 					required
+					readOnly
 					name="title"
-					value={chosenEntrys}
+					value={(hydrated && chosenEntry?.title) ?? ''}
 					type="text"
 					id="title"
 					autoComplete="off"
