@@ -13,10 +13,6 @@ export default function Card() {
 				return (
 					<CardContainer key={books.id}>
 						<li>
-							<p>{books.bookmarkStatus}</p>
-							<p>Author: {books.author}</p>
-							<p>Title: {books.title}</p>
-
 							{books.edit ? (
 								<input
 									type="text"

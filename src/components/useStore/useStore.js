@@ -12,8 +12,6 @@ const useStore = create(
 					newBooks: [
 						...state.newBooks,
 						{
-							author: books.author,
-							title: books.title,
 							selection: books.selection,
 							series: books.series,
 							bookmarkStatus: books.bookmarkStatus,
@@ -80,6 +78,7 @@ const useStore = create(
 					};
 				});
 			},
+
 			bookmarkStatus: null,
 			updateBookmark: bookmarkStatus => {
 				set({ bookmarkStatus });
