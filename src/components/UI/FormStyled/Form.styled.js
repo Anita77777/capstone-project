@@ -7,7 +7,7 @@ export const Container = styled.div`
 	justify-content: start;
 	margin-top: 7rem;
 	text-align: start;
-	width: 100vw;
+	width: 100%;
 	background-color: black;
 `;
 
@@ -19,7 +19,7 @@ export const Formfield = styled.input`
 	display: flex;
 	flex-wrap: wrap;
 	height: 3rem;
-	width: 100vw;
+	width: 100%;
 	gap: 2rem;
 	background-color: whitesmoke;
 	border: solid palevioletred;
@@ -32,7 +32,7 @@ export const Formcomment = styled.textarea`
 	text-align: start;
 	color: black;
 	height: 10rem;
-	width: 100vw;
+	width: 100%;
 	align-content: start;
 	word-wrap: wrap;
 	background-color: white;
