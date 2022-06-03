@@ -5,8 +5,11 @@ export default function SearchBar() {
 	const [searchTerm, setSearchTerm] = useState('');
 	const findEntry = useStore(state => state.findEntry);
 	const foundEntrys = useStore(state => state.foundEntrys);
-	console.log(foundEntrys);
+	const chooseEntry = useStore(state => state.chooseEntry);
 
+	const handleChange = event => {
+		setSearchTerm(event.target.value);
+	};
 	return (
 		<section>
 			<form
@@ -21,12 +24,23 @@ export default function SearchBar() {
 						type="search"
 						placeholder="search for book"
 						value={searchTerm}
-						onChange={event => {
-							setSearchTerm(event.target.value);
-						}}
+						onChange={handleChange}
 					/>
 				</label>
 				<button type="submit">Search</button>
+
+				<ul>
+					{foundEntrys.map(entry => (
+						<li
+							key={entry.id}
+							author={entry.author}
+							title={entry.title}
+							onClick={() => {
+								chooseEntry(entry.id);
+							}}
+						/>
+					))}
+				</ul>
 			</form>
 		</section>
 	);
