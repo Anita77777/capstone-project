@@ -1,9 +1,9 @@
 import { useForm } from 'react-hook-form';
-import { Container, Formcomment, Formfield, Label } from './Form.styled';
-import { SubmitButton } from '../Button/SubmitButton.styled';
+import { Container, Formcomment, Formfield, Label } from '../UI/FormStyled/Form.styled';
 import useStore from '../useStore/useStore';
-import { Fieldset, LabelRadio } from '../Button/RadioButtonstyled';
+import { Fieldset, LabelRadio, WrapperFieldset } from '../UI/ButtonStyled/RadioButtonstyled';
 import Bookmark from '../Button/BookmarkButton';
+import { Button } from '../UI/ButtonStyled/Button.styled';
 
 export default function Form() {
 	const addNewBook = useStore(state => state.addNewBook);
@@ -29,7 +29,7 @@ export default function Form() {
 	return (
 		<Container>
 			<form onSubmit={handleSubmit(onSubmit)}>
-				<Label htmlFor="Author">Author</Label>
+				<Label>Author</Label>
 				<Formfield
 					aria-invalid={errors.name ? 'true' : 'false'}
 					{...register('author', { required: true, maxLength: 30 })}
@@ -37,10 +37,11 @@ export default function Form() {
 					name="author"
 					type="text"
 					id="author"
+					placeholder="Add the Auhor's name here"
 					autoComplete="off"
 				/>
 
-				<Label htmlFor="Booktitle">Booktitle</Label>
+				<Label>Booktitle</Label>
 				<Formfield
 					aria-invalid={errors.name ? 'true' : 'false'}
 					{...register('title', { required: true, maxLength: 30 })}
@@ -48,10 +49,11 @@ export default function Form() {
 					name="title"
 					type="text"
 					id="title"
+					placeholder="Add the title here"
 					autoComplete="off"
 				/>
 
-				<Label htmlFor="Comment">Comment</Label>
+				<Label>Comment</Label>
 				<Formcomment
 					aria-invalid={errors.Comment ? 'true' : 'false'}
 					{...register('comment', { required: true })}
@@ -59,34 +61,36 @@ export default function Form() {
 					name="comment"
 					type="text"
 					id="comment"
+					placeholder="Insert your notes, key details and scenes here"
 					autoComplete="off"
 				/>
+				<WrapperFieldset>
+					<Fieldset
+						aria-invalid={errors.selection ? 'true' : 'false'}
+						{...register('selection', { required: true })}
+					>
+						<input
+							{...register('selection')}
+							name="selection"
+							type="radio"
+							id="standalone"
+							value="standalone"
+						/>
+						<LabelRadio>Standalone</LabelRadio>
 
-				<Fieldset
-					aria-invalid={errors.selection ? 'true' : 'false'}
-					{...register('selection', { required: true })}
-				>
-					<input
-						{...register('selection')}
-						name="selection"
-						type="radio"
-						id="standalone"
-						value="standalone"
-					/>
-					<LabelRadio htmlFor="standalone">Standalone</LabelRadio>
-
-					<input
-						{...register('selection')}
-						name="selection"
-						type="radio"
-						id="series"
-						value="series"
-					/>
-					<LabelRadio htmlFor="series">Series</LabelRadio>
-				</Fieldset>
+						<input
+							{...register('selection')}
+							name="selection"
+							type="radio"
+							id="series"
+							value="series"
+						/>
+						<LabelRadio>Series</LabelRadio>
+					</Fieldset>
+				</WrapperFieldset>
 				<Bookmark />
 
-				<SubmitButton type="submit">submit</SubmitButton>
+				<Button type="submit">Add to library</Button>
 			</form>
 		</Container>
 	);

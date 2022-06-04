@@ -1,5 +1,5 @@
 import React from 'react';
-import { SubmitButton } from './SubmitButton.styled';
+import { SubmitButton } from '../UI/ButtonStyled/SubmitButton.styled';
 
 export default {
 	title: 'Components/SubmitButton',
@@ -7,7 +7,7 @@ export default {
 	decorators: [
 		Story => {
 			return (
-				<div style={{ padding: '3em', maxWidth: '400px', position: 'relative' }}>
+				<div>
 					<Story />
 				</div>
 			);
@@ -17,6 +17,6 @@ export default {
 
 const ButtonText = 'Submit';
 
-export function Default() {
+export function Submit() {
 	return <SubmitButton>{ButtonText}</SubmitButton>;
 }
