@@ -17,6 +17,7 @@ export default function Form() {
 		register,
 		handleSubmit,
 		reset,
+
 		formState: { errors },
 	} = useForm();
 
