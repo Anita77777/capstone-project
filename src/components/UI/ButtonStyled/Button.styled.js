@@ -43,7 +43,7 @@ ${({ variant = 'submit' }) =>
 		css`
 			display: flex;
 			justify-content: center;
-			align-items: center;
+			margin-left: 8rem;
 			color: white;
 			font-weight: bold;
 			width: 11rem;
@@ -51,12 +51,8 @@ ${({ variant = 'submit' }) =>
 			padding: 0.5rem;
 			border: none;
 			margin-top: 2rem;
-			position: absolute;
-			margin-left: 35vw;
 			background: linear-gradient(45deg, var(--gradient));
-
 			span {
-				position: relative;
 				top: 16px;
 			}
 		`}
