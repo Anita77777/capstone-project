@@ -50,22 +50,26 @@ const StyledH2 = styled.h2`
 	font-size: 2.6rem;
 	text-transform: uppercase;
 	padding-bottom: 9px;
+	color: white;
 `;
 
 const StyledH3 = styled.h3`
 	font-size: 2rem;
 	text-transform: uppercase;
 	padding-bottom: 9px;
+	color: white;
 `;
 
 const StyledP = styled.p`
 	font-size: 1.6rem;
 	padding-bottom: 12px;
 	word-wrap: break-word;
+	color: white;
 `;
 
 const StyledSpan = styled.span`
 	font-size: 1.6rem;
 	padding-bottom: 12px;
 	word-wrap: break-word;
+	color: white;
 `;

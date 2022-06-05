@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
   overflow: hidden;
   overflow-y:auto; 
 }
-@media only screen and (max-width: 600px){
+
 body {
   padding: 0;
 	margin: 0;
@@ -21,7 +21,7 @@ body {
   
   
 }
-}
+
 
 :root {
 --gradient: rgba(59, 173, 227, 1) 0%,

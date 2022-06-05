@@ -82,5 +82,6 @@ ${({ variant = 'Home' }) =>
 				top: 16px;
 			}
 			border-radius: 10px 10px 10px 10px;
+			font-size: 1.6rem;
 		`}
 `;
