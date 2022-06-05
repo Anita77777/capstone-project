@@ -44,7 +44,7 @@ export default function Form() {
 				<Label>Booktitle</Label>
 				<Formfield
 					aria-invalid={errors.name ? 'true' : 'false'}
-					{...register('title', { required: true, maxLength: 30 })}
+					{...register('title', { required: true, pattern: /\S(.*\S)?/, maxLength: 30 })}
 					required
 					name="title"
 					type="text"
@@ -56,7 +56,7 @@ export default function Form() {
 				<Label>Comment</Label>
 				<Formcomment
 					aria-invalid={errors.Comment ? 'true' : 'false'}
-					{...register('comment', { required: true })}
+					{...register('comment', { required: true, pattern: /\S(.*\S)?/ })}
 					required
 					name="comment"
 					type="text"
@@ -67,7 +67,7 @@ export default function Form() {
 				<WrapperFieldset>
 					<Fieldset
 						aria-invalid={errors.selection ? 'true' : 'false'}
-						{...register('selection', { required: true })}
+						{...register('selection', { required: true, pattern: /\S(.*\S)?/ })}
 					>
 						<input
 							{...register('selection')}
@@ -90,7 +90,9 @@ export default function Form() {
 				</WrapperFieldset>
 				<Bookmark />
 
-				<Button type="submit">Add to library</Button>
+				<Button type="button" variant="submit">
+					Add to library
+				</Button>
 			</form>
 		</Container>
 	);

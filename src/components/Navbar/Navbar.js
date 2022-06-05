@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import MySVG from '../UI/SVG/SVG';
-
 import { useRouter } from 'next/router';
 import { NavbarStyled } from '../UI/NavbarStyled/Navbar.styled';
 
@@ -9,8 +8,14 @@ export default function Navbar() {
 	return (
 		<NavbarStyled>
 			<Link passHref href="/">
-				<a aria-label="form" pathName={router.pathname}>
-					<MySVG variant="form" color="white" />
+				<a aria-label="home" pathName={router.pathname}>
+					<MySVG variant="home" color="white" />
+				</a>
+			</Link>
+
+			<Link passHref href="/addBook">
+				<a aria-label="Add" pathName={router.pathname}>
+					<MySVG variant="Add" color="white" />
 				</a>
 			</Link>
 

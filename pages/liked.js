@@ -14,7 +14,7 @@ export default function Liked() {
 	return (
 		<div>
 			<HeaderStyled>
-				<Typography variant="h1">Books i loved</Typography>
+				<Typography variant="h1">Loved</Typography>
 			</HeaderStyled>
 			<Cards key={newBook.id} bookmarkStatus="liked" />
 		</div>

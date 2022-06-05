@@ -9,6 +9,8 @@ const GlobalStyle = createGlobalStyle`
   html {
   font-size: 62.5%;
   font-family: Roboto Mono, sans-serif;
+  overflow: hidden;
+  overflow-y:auto; 
 }
 body {
   background-color: black;

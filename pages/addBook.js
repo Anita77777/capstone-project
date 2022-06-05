@@ -1,14 +1,14 @@
 import Typography from '../src/components/UI/Typography/Typography';
 import { HeaderStyled } from '../src/components/UI/Header/Header.styled';
-import LandingPage from '../src/components/LandingPage/LandingPage';
+import Form from '../src/components/Form/Form';
 
-export default function Home() {
+export default function AddBook() {
 	return (
-		<>
+		<div>
 			<HeaderStyled>
-				<Typography variant="h1">Readembr</Typography>
+				<Typography variant="h1">Add your Book</Typography>
 			</HeaderStyled>
-			<LandingPage />
-		</>
+			<Form />
+		</div>
 	);
 }

@@ -43,14 +43,34 @@ ${({ variant = 'submit' }) =>
 		css`
 			display: flex;
 			justify-content: center;
-			margin-left: 8rem;
+			align-items: center;
+			margin-left: 5rem;
 			color: white;
 			font-weight: bold;
-			width: 11rem;
+			width: 15rem;
 			height: 4rem;
 			padding: 0.5rem;
 			border: none;
 			margin-top: 2rem;
+			background: linear-gradient(45deg, var(--gradient));
+			span {
+				top: 16px;
+			}
+		`}
+
+${({ variant = 'Home' }) =>
+		variant === 'Home' &&
+		css`
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: white;
+			font-weight: bold;
+			width: 20rem;
+			height: 5.5rem;
+			margin: 8rem;
+			margin-left: 8rem;
+			border: none;
 			background: linear-gradient(45deg, var(--gradient));
 			span {
 				top: 16px;

@@ -14,7 +14,7 @@ export default function WantToRead() {
 	return (
 		<div>
 			<HeaderStyled>
-				<Typography variant="h1">Books i want to read</Typography>
+				<Typography variant="h1">Future Reads</Typography>
 			</HeaderStyled>
 			<Cards key={newBook.id} bookmarkStatus="tbr" />
 		</div>

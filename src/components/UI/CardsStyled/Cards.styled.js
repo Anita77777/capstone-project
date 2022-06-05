@@ -5,7 +5,7 @@ export const CardContainer = styled.li`
 	flex-direction: column;
 	align-self: center;
 	border-radius: 20px;
-	width: inherit;
+	width: 100%;
 	background-color: white;
 	text-align: center;
 	line-height: 30px;
@@ -13,15 +13,17 @@ export const CardContainer = styled.li`
 	border: solid palevioletred;
 	border-width: 0.3rem;
 	padding: 5rem;
+	margin-top: 2rem;
 `;
 
 export const WrapperComment = styled.input`
 	display: flex;
+	text-align: start;
 	align-self: center;
 	flex-wrap: wrap;
 	border: solid palevioletred;
 	min-height: 100px;
-	width: 200px;
+	width: 300px;
 	font-size: 1.6rem;
 	overflow-wrap: break-word;
 `;

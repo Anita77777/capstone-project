@@ -14,7 +14,7 @@ export default function Disliked() {
 	return (
 		<div>
 			<HeaderStyled>
-				<Typography variant="h1">Books i disliked</Typography>
+				<Typography variant="h1">Disliked</Typography>
 			</HeaderStyled>
 			<Cards key={newBook.id} bookmarkStatus="disliked" />
 		</div>
