@@ -53,7 +53,7 @@ export default function Form() {
 					autoComplete="off"
 				/>
 
-				<Label>Comment</Label>
+				<Label>Notes</Label>
 				<Formcomment
 					aria-invalid={errors.Comment ? 'true' : 'false'}
 					{...register('comment', { required: true, pattern: /\S(.*\S)?/ })}

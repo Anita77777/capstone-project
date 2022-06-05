@@ -8,7 +8,7 @@ export default function Navbar() {
 	return (
 		<NavbarStyled>
 			<Link passHref href="/">
-				<a aria-label="home" pathName={router.pathname}>
+				<a aria-label="Home" pathName={router.pathname}>
 					<MySVG variant="home" color="white" />
 				</a>
 			</Link>

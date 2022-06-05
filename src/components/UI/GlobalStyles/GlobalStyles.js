@@ -23,6 +23,7 @@ body {
   rgba(87, 111, 230, 1) 25%,
   rgba(152, 68, 183, 1) 51%,
   rgba(255, 53, 127, 1) 100%;
+  font-family: 'Courier New', Courier, monospace;
 
 }
 

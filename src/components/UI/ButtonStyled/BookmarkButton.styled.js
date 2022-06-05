@@ -18,6 +18,7 @@ export const BookmarkButton = styled.button`
 
 export const TextBookmark = styled.p`
 	justify-content: space-between;
-	font-size: 1.5rem;
+	font-size: 1.4rem;
 	color: black;
+	font-family: 'Courier New', Courier, monospace;
 `;
