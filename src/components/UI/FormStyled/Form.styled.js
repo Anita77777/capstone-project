@@ -9,6 +9,7 @@ export const Container = styled.div`
 	text-align: start;
 	width: 100%;
 	background-color: black;
+	top: 0;
 `;
 
 export const Formfield = styled.input`
@@ -25,7 +26,6 @@ export const Formfield = styled.input`
 	border-width: 0.3rem;
 	margin-bottom: 2rem;
 	font-family: 'Courier New', Courier, monospace;
-
 	font-size: 1.4rem;
 `;
 
@@ -52,4 +52,5 @@ export const Label = styled.label`
 	justify-content: center;
 	font-size: 2rem;
 	font-family: 'Courier New', Courier, monospace;
+	font-weight: bolder;
 `;

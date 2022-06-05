@@ -67,7 +67,8 @@ export const LinkHome = styled.a`
 `;
 
 export const WrapperLandingPage = styled.div`
-	margin: 1rem;
+	position: relative;
+	margin-left: 1.5rem;
 `;
 export const WrapperImage = styled.div`
 	position: absolute;
@@ -75,4 +76,5 @@ export const WrapperImage = styled.div`
 	height: 100%;
 	z-index: -10;
 	position: fixed;
+	top: 0;
 `;

@@ -12,10 +12,14 @@ const GlobalStyle = createGlobalStyle`
   overflow: hidden;
   overflow-y:auto; 
 }
+@media only screen and (max-width: 600px){
 body {
+  padding: 0;
+	margin: 0;
   background-color: black;
-  height: auto;
-  color: white;
+  
+  
+}
 }
 
 :root {

@@ -46,7 +46,7 @@ ${({ variant = 'submit' }) =>
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			margin-left: 7rem;
+			margin-left: 6rem;
 			color: white;
 			font-weight: bold;
 			width: 15rem;
@@ -59,6 +59,7 @@ ${({ variant = 'submit' }) =>
 				top: 16px;
 			}
 			font-family: 'Courier New', Courier, monospace;
+			font-weight: bolder;
 		`}
 
 ${({ variant = 'Home' }) =>
@@ -76,8 +77,10 @@ ${({ variant = 'Home' }) =>
 			border: none;
 			background: linear-gradient(45deg, var(--gradient));
 			font-family: 'Courier New', Courier, monospace;
+			font-weight: bolder;
 			span {
 				top: 16px;
 			}
+			border-radius: 10px 10px 10px 10px;
 		`}
 `;

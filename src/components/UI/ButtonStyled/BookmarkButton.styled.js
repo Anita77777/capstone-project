@@ -21,4 +21,5 @@ export const TextBookmark = styled.p`
 	font-size: 1.4rem;
 	color: black;
 	font-family: 'Courier New', Courier, monospace;
+	font-weight: bolder;
 `;
