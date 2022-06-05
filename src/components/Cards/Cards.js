@@ -17,8 +17,8 @@ export default function Cards({ bookmarkStatus }) {
 			{booksToRender.map(books => {
 				return (
 					<CardContainer key={books.id}>
-						<Typography variant="h2">Author: {books.author}</Typography>
-						<Typography variant="h3">Title: {books.title}</Typography>
+						<Typography variant="h2">{books.title}</Typography>
+						<Typography variant="h3">{books.author}</Typography>
 						{books.edit ? (
 							<WrapperComment
 								type="text"

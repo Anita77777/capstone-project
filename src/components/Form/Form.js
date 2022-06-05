@@ -90,7 +90,7 @@ export default function Form() {
 				</WrapperFieldset>
 				<Bookmark />
 
-				<Button type="button" variant="submit">
+				<Button type="submit" variant="submit">
 					Add to library
 				</Button>
 			</form>
