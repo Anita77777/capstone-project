@@ -25,7 +25,6 @@ export const Formfield = styled.input`
 	border: solid palevioletred;
 	border-width: 0.3rem;
 	margin-bottom: 2rem;
-	font-family: 'Courier New', Courier, monospace;
 	font-size: 1.4rem;
 `;
 
@@ -41,7 +40,7 @@ export const Formcomment = styled.textarea`
 	margin-bottom: 3rem;
 	border: solid palevioletred;
 	border-width: 0.3rem;
-	font-family: 'Courier New', Courier, monospace;
+
 	font-size: 1.4rem;
 `;
 
@@ -51,6 +50,6 @@ export const Label = styled.label`
 	padding: 0.2rem;
 	justify-content: center;
 	font-size: 2rem;
-	font-family: 'Courier New', Courier, monospace;
+
 	font-weight: bolder;
 `;

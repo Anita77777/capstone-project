@@ -35,6 +35,12 @@ export default function Typography({ children, variant, component, ...rest }) {
 					{children}
 				</StyledH3>
 			);
+		case 'p':
+			return (
+				<TextBookmark {...rest} as={component}>
+					{children}
+				</TextBookmark>
+			);
 	}
 }
 
@@ -72,4 +78,12 @@ const StyledSpan = styled.span`
 	padding-bottom: 12px;
 	word-wrap: break-word;
 	color: white;
+`;
+
+export const TextBookmark = styled.p`
+	justify-content: space-between;
+	font-size: 1.4rem;
+	color: black;
+	font-family: 'Courier New', Courier, monospace;
+	font-weight: bolder;
 `;

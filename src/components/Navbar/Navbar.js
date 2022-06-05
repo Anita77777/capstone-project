@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import MySVG from '../UI/SVG/SVG';
 import { useRouter } from 'next/router';
-import { NavbarStyled } from '../UI/NavbarStyled/Navbar.styled';
+import { NavbarStyled } from '../UI/Navbar.styled';
 
 export default function Navbar() {
 	const router = useRouter();

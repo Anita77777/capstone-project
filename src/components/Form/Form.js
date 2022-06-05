@@ -1,5 +1,5 @@
 import { useForm } from 'react-hook-form';
-import { Container, Formcomment, Formfield, Label } from '../UI/FormStyled/Form.styled';
+import { Container, Formcomment, Formfield, Label } from '../UI/Form.styled';
 import useStore from '../useStore/useStore';
 import { Fieldset, LabelRadio, WrapperFieldset } from '../UI/ButtonStyled/RadioButtonstyled';
 import Bookmark from '../Button/BookmarkButton';

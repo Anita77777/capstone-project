@@ -1,8 +1,8 @@
 import useStore from '../useStore/useStore';
-import { WrapperBookmark, TextBookmark } from '../UI/ButtonStyled/BookmarkButton.styled';
+import { WrapperBookmark } from '../UI/ButtonStyled/BookmarkButton.styled';
 import MySVG from '../UI/SVG/SVG';
 import { BookmarkButton } from '../UI/ButtonStyled/BookmarkButton.styled';
-
+import Typography from '../UI/Typography/Typography';
 export default function Bookmark() {
 	const updateBookmark = useStore(state => state.updateBookmark);
 	const bookmarkStatus = useStore(state => state.bookmarkStatus);
@@ -16,7 +16,7 @@ export default function Bookmark() {
 			) : (
 				<BookmarkButton type="button" onClick={() => updateBookmark('liked')}>
 					<MySVG variant="heartEmpty" />
-					<TextBookmark>Loved</TextBookmark>
+					<Typography variant="p">Loved</Typography>
 				</BookmarkButton>
 			)}
 
@@ -32,7 +32,7 @@ export default function Bookmark() {
 					}}
 				>
 					<MySVG variant="brokenHeartEmpty" />
-					<TextBookmark>Disliked</TextBookmark>
+					<Typography variant="p">Disliked</Typography>
 				</BookmarkButton>
 			)}
 
@@ -43,7 +43,7 @@ export default function Bookmark() {
 			) : (
 				<BookmarkButton type="button" onClick={() => updateBookmark('tbr')}>
 					<MySVG variant="bookEmpty" />
-					<TextBookmark>TBR</TextBookmark>
+					<Typography variant="p">TBR</Typography>
 				</BookmarkButton>
 			)}
 		</WrapperBookmark>

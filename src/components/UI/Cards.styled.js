@@ -13,7 +13,6 @@ export const CardContainer = styled.li`
 	border: solid palevioletred;
 	border-width: 0.3rem;
 	padding: 5rem;
-	font-family: 'Courier New', Courier, monospace;
 	background-color: black;
 	margin: 2rem;
 `;
@@ -26,7 +25,6 @@ export const WrapperComment = styled.input`
 	width: 100%;
 	font-size: 1.6rem;
 	word-wrap: break-word;
-	font-family: 'Courier New', Courier, monospace;
 `;
 
 export const CardWrapper = styled.ul`

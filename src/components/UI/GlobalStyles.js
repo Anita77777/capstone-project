@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
   }
   html {
   font-size: 62.5%;
-  font-family: Roboto Mono, sans-serif;
+  font-family: 'Courier New', Courier, monospace;
   overflow: hidden;
   overflow-y:auto; 
 }

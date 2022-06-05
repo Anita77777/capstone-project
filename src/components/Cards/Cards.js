@@ -1,5 +1,5 @@
 import useStore from '../useStore/useStore';
-import { CardContainer, WrapperComment, CardWrapper } from '../UI/CardsStyled/Cards.styled';
+import { CardContainer, WrapperComment, CardWrapper } from '../UI/Cards.styled';
 import Typography from '../UI/Typography/Typography';
 
 import { Button } from '../UI/ButtonStyled/Button.styled';
