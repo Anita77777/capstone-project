@@ -1,5 +1,11 @@
 import useStore from '../useStore/useStore';
-import { CardContainer, WrapperComment, CardWrapper } from '../UI/Cards.styled';
+import {
+	CardContainer,
+	WrapperComment,
+	CardWrapper,
+	WrapperButton,
+	LinkGood,
+} from '../UI/Cards.styled';
 import Typography from '../UI/Typography/Typography';
 
 import { Button } from '../UI/ButtonStyled/Button.styled';
@@ -32,26 +38,36 @@ export default function Cards({ bookmarkStatus }) {
 						)}
 						<Typography variant="p">{books.selection}</Typography>
 						<Typography variant="p">{books.edit}</Typography>
+						<WrapperButton>
+							<Button
+								type="button"
+								variant="edit"
+								onClick={() => {
+									editComment(books.id);
+								}}
+							>
+								{books.edit ? 'Save' : 'Edit'}
+							</Button>
 
-						<Button
-							type="button"
-							variant="edit"
-							onClick={() => {
-								editComment(books.id);
-							}}
-						>
-							{books.edit ? 'Save' : 'Edit'}
-						</Button>
+							<Button
+								type="button"
+								variant="delete"
+								onClick={() => {
+									deleteBook(books.id);
+								}}
+							>
+								Delete
+							</Button>
 
-						<Button
-							type="button"
-							variant="delete"
-							onClick={() => {
-								deleteBook(books.id);
-							}}
-						>
-							Delete
-						</Button>
+							<LinkGood
+								href="https://www.goodreads.com"
+								aria-label="Link to Goodreads"
+							>
+								<Button type="button" variant="Goodreads">
+									Goodreads
+								</Button>
+							</LinkGood>
+						</WrapperButton>
 					</CardContainer>
 				);
 			})}

@@ -5,26 +5,30 @@ export const CardContainer = styled.li`
 	align-items: center;
 	flex-direction: column;
 	border-radius: 20px;
-	height: 45rem;
-	width: 90%;
+	height: 50rem;
+	width: 100%;
 	text-align: center;
 	line-height: 30px;
 	color: black;
 	border: solid palevioletred;
 	border-width: 0.3rem;
-	padding: 5rem;
+	padding: 6rem;
 	background-color: black;
 	margin: 2rem;
+	flex-grow: 5;
 `;
 
 export const WrapperComment = styled.input`
 	display: flex;
+	align-items: flex-start;
 	flex-wrap: wrap;
 	border: solid palevioletred;
 	min-height: 100px;
-	width: 100%;
+	width: 70%;
 	font-size: 1.6rem;
-	word-wrap: break-word;
+	word-wrap: wrap;
+	text-align: start;
+	position: absolute;
 `;
 
 export const CardWrapper = styled.ul`
@@ -36,4 +40,21 @@ export const CardWrapper = styled.ul`
 	width: 100%;
 	background-color: black;
 	top: 0;
+	flex-wrap: wrap;
+`;
+
+export const WrapperButton = styled.div`
+	display: flex;
+	flex-direction: column;
+	background-color: none;
+	width: 80%;
+	position: absolute;
+	margin: 300px;
+	align-items: center;
+	text-decoration: none;
+	height: 200px;
+	gap: 10px;
+`;
+export const LinkGood = styled.a`
+	text-decoration: none;
 `;

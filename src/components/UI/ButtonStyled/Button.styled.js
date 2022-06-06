@@ -7,15 +7,12 @@ export const Button = styled.button`
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			align-self: center;
 			color: white;
 			font-weight: bold;
 			width: 100px;
 			height: 3.2rem;
 			padding: 5px;
 			border: none;
-			position: relative;
-			margin-top: 20px;
 			font-family: 'Courier New', Courier, monospace;
 			background: linear-gradient(45deg, var(--gradient));
 		`}
@@ -24,19 +21,31 @@ export const Button = styled.button`
 		variant === 'edit' &&
 		css`
 			display: flex;
-			justify-content: center;
 			align-items: center;
-			align-self: center;
+			justify-content: center;
 			color: white;
 			font-weight: bold;
 			width: 100px;
 			height: 3.2rem;
 			padding: 5px;
 			border: none;
-			position: relative;
-			margin-top: 20px;
 			font-family: 'Courier New', Courier, monospace;
 			background: linear-gradient(45deg, var(--gradient));
+		`}
+		${({ variant = 'Goodreads' }) =>
+		variant === 'Goodreads' &&
+		css`
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: white;
+			font-weight: bold;
+			width: 100px;
+			height: 3.2rem;
+			padding: 5px;
+			border: none;
+			font-family: 'Courier New', Courier, monospace;
+			background-color: green;
 		`}
 
 
@@ -46,7 +55,7 @@ ${({ variant = 'submit' }) =>
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			margin-left: 6rem;
+			margin-left: 7rem;
 			color: white;
 			font-weight: bold;
 			width: 15rem;
