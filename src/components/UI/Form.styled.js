@@ -5,7 +5,7 @@ export const Container = styled.div`
 	flex-direction: column;
 	color: black;
 	align-items: center;
-	margin-top: 6rem;
+	margin-top: 7rem;
 	text-align: start;
 	width: 100%;
 	background-color: black;
@@ -40,8 +40,8 @@ export const Formcomment = styled.textarea`
 	margin-bottom: 3rem;
 	border: solid palevioletred;
 	border-width: 0.3rem;
-
 	font-size: 1.4rem;
+	flex-wrap: wrap;
 `;
 
 export const Label = styled.label`
