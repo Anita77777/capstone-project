@@ -1,14 +1,14 @@
 import Typography from '../src/components/UI/Typography/Typography';
-import Form from '../src/components/Form/Form';
-import { HeaderStyled } from '../src/components/UI/Header/Header.styled';
+import { HeaderStyled } from '../src/components/UI/Header.styled';
+import LandingPage from '../src/components/LandingPage/LandingPage';
 
 export default function Home() {
 	return (
-		<div>
+		<>
 			<HeaderStyled>
-				<Typography variant="h1">choose your book</Typography>
+				<Typography variant="h1">Readembr</Typography>
 			</HeaderStyled>
-			<Form />
-		</div>
+			<LandingPage />
+		</>
 	);
 }

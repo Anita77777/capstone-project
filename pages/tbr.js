@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic';
 import Typography from '../src/components/UI/Typography/Typography';
 import useStore from '../src/components/useStore/useStore';
-import { HeaderStyled } from '../src/components/UI/Header/Header.styled';
+import { HeaderStyled } from '../src/components/UI/Header.styled';
 
 //delete on mongoDB integration, only used for persist/localStorage (dynamic import with NO SSR form next.js docu --> https://nextjs.org/docs/advanced-features/dynamic-import)
 const Cards = dynamic(() => import('../src/components/Cards/Cards'), {
@@ -14,7 +14,7 @@ export default function WantToRead() {
 	return (
 		<div>
 			<HeaderStyled>
-				<Typography variant="h1">Books i want to read</Typography>
+				<Typography variant="h1">Future Reads</Typography>
 			</HeaderStyled>
 			<Cards key={newBook.id} bookmarkStatus="tbr" />
 		</div>

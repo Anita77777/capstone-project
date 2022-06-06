@@ -1,5 +1,5 @@
 import useStore from '../useStore/useStore';
-import { CardContainer, WrapperComment, CardWrapper } from '../UI/CardsStyled/Cards.styled';
+import { CardContainer, WrapperComment, CardWrapper } from '../UI/Cards.styled';
 import Typography from '../UI/Typography/Typography';
 
 import { Button } from '../UI/ButtonStyled/Button.styled';
@@ -17,8 +17,8 @@ export default function Cards({ bookmarkStatus }) {
 			{booksToRender.map(books => {
 				return (
 					<CardContainer key={books.id}>
-						<Typography variant="h2">Author: {books.author}</Typography>
-						<Typography variant="h3">Title: {books.title}</Typography>
+						<Typography variant="h2">{books.title}</Typography>
+						<Typography variant="h3">{books.author}</Typography>
 						{books.edit ? (
 							<WrapperComment
 								type="text"

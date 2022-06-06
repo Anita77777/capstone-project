@@ -2,36 +2,38 @@ import styled from 'styled-components';
 
 export const CardContainer = styled.li`
 	display: flex;
+	align-items: center;
 	flex-direction: column;
-	align-self: center;
 	border-radius: 20px;
-	width: inherit;
-	background-color: white;
+	height: 45rem;
+	width: 90%;
 	text-align: center;
 	line-height: 30px;
 	color: black;
 	border: solid palevioletred;
 	border-width: 0.3rem;
 	padding: 5rem;
+	background-color: black;
+	margin: 2rem;
 `;
 
 export const WrapperComment = styled.input`
 	display: flex;
-	align-self: center;
 	flex-wrap: wrap;
 	border: solid palevioletred;
 	min-height: 100px;
-	width: 200px;
+	width: 100%;
 	font-size: 1.6rem;
-	overflow-wrap: break-word;
+	word-wrap: break-word;
 `;
 
 export const CardWrapper = styled.ul`
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	margin-top: 5rem;
-	padding: 1rem;
-	width: 37rem;
-	flex-wrap: wrap;
+	justify-content: column;
+	color: black;
+	margin-top: 6rem;
+	text-align: start;
+	width: 100%;
+	background-color: black;
+	top: 0;
 `;

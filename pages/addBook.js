@@ -1,22 +1,18 @@
-import dynamic from 'next/dynamic';
 import Typography from '../src/components/UI/Typography/Typography';
-import useStore from '../src/components/useStore/useStore';
 import { HeaderStyled } from '../src/components/UI/Header.styled';
-
+import dynamic from 'next/dynamic';
 //delete on mongoDB integration, only used for persist/localStorage (dynamic import with NO SSR form next.js docu --> https://nextjs.org/docs/advanced-features/dynamic-import)
-const Cards = dynamic(() => import('../src/components/Cards/Cards'), {
+const Form = dynamic(() => import('../src/components/Form/Form'), {
 	ssr: false, // This line is important.
 });
 
-export default function Liked() {
-	const newBook = useStore(state => state.newBooks);
-
+export default function AddBook() {
 	return (
 		<div>
 			<HeaderStyled>
-				<Typography variant="h1">Loved</Typography>
+				<Typography variant="h1">Add your Book</Typography>
 			</HeaderStyled>
-			<Cards key={newBook.id} bookmarkStatus="liked" />
+			<Form />
 		</div>
 	);
 }

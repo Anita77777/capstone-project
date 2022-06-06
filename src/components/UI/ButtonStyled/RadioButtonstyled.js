@@ -17,4 +17,5 @@ export const LabelRadio = styled.label`
 	font-size: 1.6rem;
 	color: white;
 	padding: 20px;
+	font-weight: bolder;
 `;

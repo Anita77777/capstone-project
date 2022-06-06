@@ -4,11 +4,12 @@ export const Container = styled.div`
 	display: flex;
 	flex-direction: column;
 	color: black;
-	justify-content: start;
-	margin-top: 7rem;
+	align-items: center;
+	margin-top: 6rem;
 	text-align: start;
 	width: 100%;
 	background-color: black;
+	top: 0;
 `;
 
 export const Formfield = styled.input`
@@ -20,11 +21,11 @@ export const Formfield = styled.input`
 	flex-wrap: wrap;
 	height: 3rem;
 	width: 100%;
-	gap: 2rem;
 	background-color: whitesmoke;
 	border: solid palevioletred;
 	border-width: 0.3rem;
-	margin-bottom: 2.5rem;
+	margin-bottom: 2rem;
+	font-size: 1.4rem;
 `;
 
 export const Formcomment = styled.textarea`
@@ -35,15 +36,20 @@ export const Formcomment = styled.textarea`
 	width: 100%;
 	align-content: start;
 	word-wrap: wrap;
-	background-color: white;
-	margin-bottom: 4rem;
+	background-color: whitesmoke;
+	margin-bottom: 3rem;
 	border: solid palevioletred;
 	border-width: 0.3rem;
+
+	font-size: 1.4rem;
 `;
 
 export const Label = styled.label`
 	display: flex;
 	color: white;
+	padding: 0.2rem;
 	justify-content: center;
 	font-size: 2rem;
+
+	font-weight: bolder;
 `;

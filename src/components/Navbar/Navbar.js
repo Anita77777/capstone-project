@@ -1,16 +1,21 @@
 import Link from 'next/link';
 import MySVG from '../UI/SVG/SVG';
-
 import { useRouter } from 'next/router';
-import { NavbarStyled } from '../UI/NavbarStyled/Navbar.styled';
+import { NavbarStyled } from '../UI/Navbar.styled';
 
 export default function Navbar() {
 	const router = useRouter();
 	return (
 		<NavbarStyled>
 			<Link passHref href="/">
-				<a aria-label="form" pathName={router.pathname}>
-					<MySVG variant="form" color="white" />
+				<a aria-label="Home" pathName={router.pathname}>
+					<MySVG variant="home" color="white" />
+				</a>
+			</Link>
+
+			<Link passHref href="/addBook">
+				<a aria-label="Add" pathName={router.pathname}>
+					<MySVG variant="Add" color="white" />
 				</a>
 			</Link>
 
