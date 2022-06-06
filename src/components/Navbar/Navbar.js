@@ -13,15 +13,15 @@ export default function Navbar() {
 				</a>
 			</Link>
 
-			<Link passHref href="/addBook">
-				<a aria-label="Add" pathName={router.pathname}>
-					<MySVG variant="Add" color="white" />
-				</a>
-			</Link>
-
 			<Link passHref href="/liked">
 				<a aria-label="liked" pathName={router.pathname}>
 					<MySVG variant="heartFilled" color="white" />
+				</a>
+			</Link>
+
+			<Link passHref href="/addBook">
+				<a aria-label="Add" pathName={router.pathname}>
+					<MySVG variant="Add" color="white" />
 				</a>
 			</Link>
 
