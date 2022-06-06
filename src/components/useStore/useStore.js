@@ -20,19 +20,14 @@ const useStore = create(
 					],
 				})),
 
-			entries: [
-				{ author: 'Mariana Zapata', title: 'Luna and the lie', id: '1' },
-				{ author: 'Charlotte Bronte', title: 'Jane Eyre', id: '2' },
-				{ author: 'Saffron A. Kent', title: 'Unrequited', id: '3' },
-			],
-
-			findEntry: searchTerm => {
+			bookItems: searchTerm => {
 				set(state => {
 					return {
-						foundEntrys: state.entries.filter(
-							entry =>
-								Object.values(entry).filter(value => value.includes(searchTerm))
-									.length > 0
+						foundEntrys: state.items.filter(
+							book =>
+								Object.values(book).filter(value =>
+									value.includes.toLowerCase(searchTerm)
+								).length > 0
 						),
 					};
 				});
@@ -43,11 +38,11 @@ const useStore = create(
 			chooseEntry: id => {
 				set(state => {
 					return {
-						chosenEntry: state.foundEntrys.find(entry => entry.id === id),
+						chosenEntry: state.foundEntrys.find(book => book.id === id),
 					};
 				});
 			},
-
+			books: { items: [] },
 			fetchBooks: async searchTerm => {
 				const result = await axios.get(
 					`https://www.googleapis.com/books/v1/volumes?q=${searchTerm}`
@@ -102,7 +97,7 @@ const useStore = create(
 		}),
 		{
 			name: 'Readembr',
-			/*partialize: state => Object.fromEntries(Object.entries(state).filter(() => false)),*/
+			//partialize: state => Object.fromEntries(Object.entries(state).filter(() => false)),
 		}
 	)
 );
