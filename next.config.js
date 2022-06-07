@@ -5,7 +5,7 @@ const nextConfig = {
 		styledComponents: true,
 	},
 	images: {
-		domains: ['unsplash.com'],
+		domains: ['unsplash.com', 'books.google.com'],
 	},
 };
 

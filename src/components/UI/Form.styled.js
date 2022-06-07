@@ -50,6 +50,42 @@ export const Label = styled.label`
 	padding: 0.2rem;
 	justify-content: center;
 	font-size: 2rem;
-
 	font-weight: bolder;
+`;
+
+export const WrapperList = styled.ul`
+	display: flex;
+	color: white;
+	list-style-type: none;
+	padding: 15px;
+	flex-wrap: wrap;
+	background-color: black;
+	justify-content: center;
+`;
+
+export const SearchField = styled.input`
+	display: flex;
+	justify-content: start;
+	height: 4rem;
+	width: 30rem;
+	background-color: white;
+	color: black;
+	border: none;
+`;
+
+export const ContainerSearch = styled.div`
+	display: flex;
+	width: 90%;
+	border: solid palevioletred;
+	background-color: white;
+	margin-left: 10px;
+`;
+
+export const WrapperImageForm = styled.div`
+	display: flex;
+	justify-content: center;
+	box-shadow: 1px 1px 5px 1px grey;
+	background-color: whitesmoke;
+	width: 80%;
+	gap: 20px;
 `;

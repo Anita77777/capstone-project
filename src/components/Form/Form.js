@@ -4,30 +4,47 @@ import useStore from '../useStore/useStore';
 import { Fieldset, LabelRadio, WrapperFieldset } from '../UI/ButtonStyled/RadioButtonstyled';
 import Bookmark from '../Button/BookmarkButton';
 import { Button } from '../UI/ButtonStyled/Button.styled';
+import Bookresults from '../Bookresults/Bookresults';
+import { useEffect } from 'react';
 
 export default function Form() {
 	const addNewBook = useStore(state => state.addNewBook);
 	const bookmarkStatus = useStore(state => state.bookmarkStatus);
 	const updateBookmark = useStore(state => state.updateBookmark);
+	const chosenEntry = useStore(state => state.chosenEntry);
 
 	const {
 		register,
 		handleSubmit,
 		reset,
 		formState: { errors },
+		setValue,
 	} = useForm();
 
 	const onSubmit = book => {
+		console.log(book);
 		addNewBook({
 			...book,
 			bookmarkStatus,
+			image: chosenEntry
+				? `http://books.google.com/books/content?id=${chosenEntry.id}&printsec=frontcover&img=1&zoom=1&source=gbs_api`
+				: null,
 		});
 		reset();
 		updateBookmark(null);
 	};
 
+	useEffect(() => {
+		if (chosenEntry) {
+			setValue('author', chosenEntry.volumeInfo.authors);
+			setValue('title', chosenEntry.volumeInfo.title);
+		}
+	}, [chosenEntry, setValue]);
+
 	return (
 		<Container>
+			<Bookresults />
+
 			<form onSubmit={handleSubmit(onSubmit)}>
 				<Label>Author</Label>
 				<Formfield
@@ -93,6 +110,15 @@ export default function Form() {
 				<Button type="submit" variant="submit">
 					Add to library
 				</Button>
+				<br />
+				<br />
+				<br />
+				<br />
+				<br />
+				<br />
+				<br />
+				<br />
+				<br />
 			</form>
 		</Container>
 	);

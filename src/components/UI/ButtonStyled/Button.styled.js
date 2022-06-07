@@ -9,12 +9,13 @@ export const Button = styled.button`
 			align-items: center;
 			color: white;
 			font-weight: bold;
-			width: 100px;
+			width: 75px;
 			height: 3.2rem;
 			padding: 5px;
 			border: none;
 			font-family: 'Courier New', Courier, monospace;
 			background: linear-gradient(45deg, var(--gradient));
+			position: sticky;
 		`}
 
 	${({ variant = 'edit' }) =>
@@ -25,12 +26,13 @@ export const Button = styled.button`
 			justify-content: center;
 			color: white;
 			font-weight: bold;
-			width: 100px;
+			width: 75px;
 			height: 3.2rem;
 			padding: 5px;
 			border: none;
 			font-family: 'Courier New', Courier, monospace;
 			background: linear-gradient(45deg, var(--gradient));
+			position: sticky;
 		`}
 		${({ variant = 'Goodreads' }) =>
 		variant === 'Goodreads' &&
@@ -40,12 +42,13 @@ export const Button = styled.button`
 			justify-content: center;
 			color: white;
 			font-weight: bold;
-			width: 100px;
+			width: 75px;
 			height: 3.2rem;
 			padding: 5px;
 			border: none;
 			font-family: 'Courier New', Courier, monospace;
 			background-color: green;
+			position: sticky;
 		`}
 
 
@@ -92,5 +95,13 @@ ${({ variant = 'Home' }) =>
 			}
 			border-radius: 10px 10px 10px 10px;
 			font-size: 1.6rem;
+		`}
+
+
+${({ variant = 'Search' }) =>
+		variant === 'Search' &&
+		css`
+			background: white;
+			border: palevioletred;
 		`}
 `;

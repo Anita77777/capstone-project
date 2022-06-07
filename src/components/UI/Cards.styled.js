@@ -1,60 +1,51 @@
 import styled from 'styled-components';
 
-export const CardContainer = styled.li`
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	border-radius: 20px;
-	height: 50rem;
-	width: 100%;
-	text-align: center;
-	line-height: 30px;
-	color: black;
-	border: solid palevioletred;
-	border-width: 0.3rem;
-	padding: 6rem;
-	background-color: black;
-	margin: 2rem;
-	flex-grow: 5;
-`;
-
-export const WrapperComment = styled.input`
-	display: flex;
-	align-items: flex-start;
-	flex-wrap: wrap;
-	border: solid palevioletred;
-	min-height: 100px;
-	width: 70%;
-	font-size: 1.6rem;
-	word-wrap: wrap;
-	text-align: start;
-	position: absolute;
-`;
-
 export const CardWrapper = styled.ul`
 	display: flex;
-	justify-content: column;
-	color: black;
-	margin-top: 6rem;
+	flex-direction: column;
+	align-items: center;
 	text-align: start;
-	width: 100%;
+	width: 90%;
+	height: 400px;
 	background-color: black;
-	top: 0;
-	flex-wrap: wrap;
+	margin-top: 60px;
+	gap: 20px;
+	margin-left: 15px;
+	border-radius: 20px;
+	border: solid palevioletred;
+`;
+
+export const WrapperComment = styled.textarea`
+	border: solid palevioletred;
+	height: 100px;
+	width: 280px;
+	font-family: 'Courier New', Courier, monospace;
 `;
 
 export const WrapperButton = styled.div`
 	display: flex;
-	flex-direction: column;
-	background-color: none;
-	width: 80%;
-	position: absolute;
-	margin: 300px;
-	align-items: center;
-	text-decoration: none;
-	height: 200px;
-	gap: 10px;
+	gap: 15px;
+	margin-left: -4px;
+	margin-bottom: 20px;
 `;
 export const LinkGood = styled.a`
 	text-decoration: none;
+`;
+
+export const WrapperImage = styled.div`
+	display: flex;
+	flex-direction: row-reverse;
+	background-color: black;
+	margin: 25px;
+	width: 100%;
+	gap: 30px;
+	padding: 10px;
+`;
+
+export const WrapperTitleCard = styled.div`
+	display: flex;
+	align-items: center;
+	margin: 20px;
+
+	flex-direction: column; ;
 `;
