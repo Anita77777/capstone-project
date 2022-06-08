@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "animate.css": "^4.1.1",
+    "axios": "^0.27.2",
     "immer": "^9.0.13",
     "jest-environment-jsdom": "^28.1.0",
     "nanoid": "^3.3.4",
