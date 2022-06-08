@@ -58,6 +58,11 @@ const useStore = create(
 				});
 			},
 
+			resetChosenEntry: () => set({ chosenEntry: null }),
+
+			searchTerm: '',
+			setSearchTerm: value => set({ searchTerm: value }),
+
 			editComment: id => {
 				set(state => {
 					return {

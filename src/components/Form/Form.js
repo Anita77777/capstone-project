@@ -12,6 +12,8 @@ export default function Form() {
 	const bookmarkStatus = useStore(state => state.bookmarkStatus);
 	const updateBookmark = useStore(state => state.updateBookmark);
 	const chosenEntry = useStore(state => state.chosenEntry);
+	const resetChosenEntry = useStore(state => state.resetChosenEntry);
+	const setSearchTerm = useStore(state => state.setSearchTerm);
 
 	const {
 		register,
@@ -30,7 +32,9 @@ export default function Form() {
 				: null,
 		});
 		reset();
+		resetChosenEntry();
 		updateBookmark(null);
+		setSearchTerm('');
 	};
 
 	useEffect(() => {
