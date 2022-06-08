@@ -1,5 +1,5 @@
 import { useForm } from 'react-hook-form';
-import { Container, Formcomment, Formfield, Label } from '../UI/Form.styled';
+import { Container, Formcomment, Formfield, Label, WrapperButtonForm } from '../UI/Form.styled';
 import useStore from '../useStore/useStore';
 import { Fieldset, LabelRadio, WrapperFieldset } from '../UI/ButtonStyled/RadioButtonstyled';
 import Bookmark from '../Button/BookmarkButton';
@@ -106,10 +106,11 @@ export default function Form() {
 					</Fieldset>
 				</WrapperFieldset>
 				<Bookmark />
-
-				<Button type="submit" variant="submit">
-					Add to library
-				</Button>
+				<WrapperButtonForm>
+					<Button type="submit" variant="submit">
+						Add to library
+					</Button>
+				</WrapperButtonForm>
 				<br />
 				<br />
 				<br />
