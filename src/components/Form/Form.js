@@ -52,7 +52,7 @@ export default function Form() {
 				<Label>Author</Label>
 				<Formfield
 					aria-invalid={errors.name ? 'true' : 'false'}
-					{...register('author', { required: true, maxLength: 30 })}
+					{...register('author', { required: true })}
 					required
 					name="author"
 					type="text"
@@ -64,7 +64,7 @@ export default function Form() {
 				<Label>Booktitle</Label>
 				<Formfield
 					aria-invalid={errors.name ? 'true' : 'false'}
-					{...register('title', { required: true, pattern: /\S(.*\S)?/, maxLength: 30 })}
+					{...register('title', { required: true, pattern: /\S(.*\S)?/ })}
 					required
 					name="title"
 					type="text"
