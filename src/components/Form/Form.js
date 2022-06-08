@@ -21,10 +21,9 @@ export default function Form() {
 		setValue,
 	} = useForm();
 
-	const onSubmit = book => {
-		console.log(book);
+	const onSubmit = books => {
 		addNewBook({
-			...book,
+			...books,
 			bookmarkStatus,
 			image: chosenEntry
 				? `http://books.google.com/books/content?id=${chosenEntry.id}&printsec=frontcover&img=1&zoom=1&source=gbs_api`

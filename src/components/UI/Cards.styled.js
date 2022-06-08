@@ -10,7 +10,7 @@ export const CardWrapper = styled.ul`
 	background-color: black;
 	margin-top: 60px;
 	gap: 20px;
-	margin-left: 15px;
+	margin-left: 20px;
 	border-radius: 20px;
 	border: solid palevioletred;
 `;
@@ -20,6 +20,7 @@ export const WrapperComment = styled.textarea`
 	height: 100px;
 	width: 280px;
 	font-family: 'Courier New', Courier, monospace;
+	font-weight: bolder;
 `;
 
 export const WrapperButton = styled.div`
@@ -37,15 +38,14 @@ export const WrapperImage = styled.div`
 	flex-direction: row-reverse;
 	background-color: black;
 	margin: 25px;
-	width: 100%;
-	gap: 30px;
-	padding: 10px;
+
+	gap: 50px;
 `;
 
 export const WrapperTitleCard = styled.div`
 	display: flex;
-	align-items: center;
-	margin: 20px;
 
-	flex-direction: column; ;
+	justify-content: center;
+	flex-direction: column;
+	width: 200px;
 `;

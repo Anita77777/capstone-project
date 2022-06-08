@@ -5,10 +5,11 @@ export const Container = styled.div`
 	flex-direction: column;
 	color: black;
 	align-items: center;
+	margin: 35px;
 	margin-top: 7rem;
 	text-align: start;
 	background-color: black;
-	top: 0;
+	width: 30rem;
 `;
 
 export const Formfield = styled.input`
@@ -19,7 +20,8 @@ export const Formfield = styled.input`
 	display: flex;
 	flex-wrap: wrap;
 	height: 3rem;
-	width: 40rem;
+	width: 100%;
+
 	background-color: whitesmoke;
 	border: solid palevioletred;
 	border-width: 0.3rem;
@@ -32,7 +34,7 @@ export const Formcomment = styled.textarea`
 	text-align: start;
 	color: black;
 	height: 10rem;
-	width: 40rem;
+	width: 100%;
 	align-content: start;
 	word-wrap: wrap;
 	background-color: whitesmoke;
@@ -41,6 +43,7 @@ export const Formcomment = styled.textarea`
 	border-width: 0.3rem;
 	font-size: 1.4rem;
 	flex-wrap: wrap;
+	font-weight: bolder;
 `;
 
 export const Label = styled.label`
@@ -59,9 +62,9 @@ export const WrapperList = styled.ul`
 	list-style-type: none;
 	flex-wrap: wrap;
 	background-color: black;
-	width: 40rem;
+	width: 30rem;
 	margin: 25px;
-	gap: 30px;
+	gap: 10px;
 `;
 
 export const ContainerSearch = styled.div`
@@ -69,7 +72,7 @@ export const ContainerSearch = styled.div`
 	align-items: center;
 	border: solid palevioletred;
 	background-color: white;
-	width: 40rem;
+	width: 30rem;
 	margin: 20px;
 `;
 

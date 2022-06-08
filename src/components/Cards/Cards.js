@@ -33,7 +33,7 @@ export default function Cards({ bookmarkStatus }) {
 							{books.image && (
 								<Image
 									width={90}
-									height={150}
+									height={120}
 									alt={`${books.title} book`}
 									src={books.image}
 								/>

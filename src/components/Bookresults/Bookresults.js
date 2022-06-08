@@ -45,8 +45,8 @@ export default function Bookresults() {
 							>
 								<WrapperImageForm>
 									<Image
-										width={110}
-										height={150}
+										width={90}
+										height={120}
 										alt={`${book.volumeInfo.title} book`}
 										src={`http://books.google.com/books/content?id=${book.id}&printsec=frontcover&img=1&zoom=1&source=gbs_api`}
 									/>
