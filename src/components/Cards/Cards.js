@@ -1,13 +1,14 @@
 import useStore from '../useStore/useStore';
 import {
-	CardContainer,
 	WrapperComment,
-	CardWrapper,
 	WrapperButton,
 	LinkGood,
+	WrapperImage,
+	WrapperTitleCard,
+	CardWrapper,
 } from '../UI/Cards.styled';
 import Typography from '../UI/Typography/Typography';
-
+import Image from 'next/image';
 import { Button } from '../UI/ButtonStyled/Button.styled';
 
 export default function Cards({ bookmarkStatus }) {
@@ -19,15 +20,29 @@ export default function Cards({ bookmarkStatus }) {
 	const booksToRender = newBooks.filter(newBook => newBook.bookmarkStatus === bookmarkStatus);
 
 	return (
-		<CardWrapper>
+		<div>
 			{booksToRender.map(books => {
 				return (
-					<CardContainer key={books.id}>
-						<Typography variant="h2">{books.title}</Typography>
-						<Typography variant="h3">{books.author}</Typography>
+					<CardWrapper key={books.id}>
+						<WrapperImage>
+							<WrapperTitleCard>
+								<Typography variant="h3">{books.title}</Typography>
+
+								<Typography variant="h4">{books.author}</Typography>
+							</WrapperTitleCard>
+							{books.image && (
+								<Image
+									width={90}
+									height={120}
+									alt={`${books.title} book`}
+									src={books.image}
+								/>
+							)}
+						</WrapperImage>
 						{books.edit ? (
 							<WrapperComment
 								type="text"
+								maxLength={100}
 								value={books.comment}
 								onChange={event => {
 									controlEdit(books.id, event.target.value);
@@ -41,7 +56,7 @@ export default function Cards({ bookmarkStatus }) {
 						<WrapperButton>
 							<Button
 								type="button"
-								variant="edit"
+								variant="delete_edit"
 								onClick={() => {
 									editComment(books.id);
 								}}
@@ -51,7 +66,7 @@ export default function Cards({ bookmarkStatus }) {
 
 							<Button
 								type="button"
-								variant="delete"
+								variant="delete_edit"
 								onClick={() => {
 									deleteBook(books.id);
 								}}
@@ -68,9 +83,9 @@ export default function Cards({ bookmarkStatus }) {
 								</Button>
 							</LinkGood>
 						</WrapperButton>
-					</CardContainer>
+					</CardWrapper>
 				);
 			})}
-		</CardWrapper>
+		</div>
 	);
 }

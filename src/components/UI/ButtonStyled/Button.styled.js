@@ -1,38 +1,24 @@
 import styled, { css } from 'styled-components';
 
 export const Button = styled.button`
-	${({ variant = 'delete' }) =>
-		variant === 'delete' &&
+	${({ variant = 'delete_edit' }) =>
+		variant === 'delete_edit' &&
 		css`
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			color: white;
 			font-weight: bold;
-			width: 100px;
+			width: 75px;
 			height: 3.2rem;
 			padding: 5px;
 			border: none;
 			font-family: 'Courier New', Courier, monospace;
 			background: linear-gradient(45deg, var(--gradient));
+			position: sticky;
 		`}
 
-	${({ variant = 'edit' }) =>
-		variant === 'edit' &&
-		css`
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			color: white;
-			font-weight: bold;
-			width: 100px;
-			height: 3.2rem;
-			padding: 5px;
-			border: none;
-			font-family: 'Courier New', Courier, monospace;
-			background: linear-gradient(45deg, var(--gradient));
-		`}
-		${({ variant = 'Goodreads' }) =>
+	${({ variant = 'Goodreads' }) =>
 		variant === 'Goodreads' &&
 		css`
 			display: flex;
@@ -40,12 +26,13 @@ export const Button = styled.button`
 			justify-content: center;
 			color: white;
 			font-weight: bold;
-			width: 100px;
+			width: 75px;
 			height: 3.2rem;
 			padding: 5px;
 			border: none;
 			font-family: 'Courier New', Courier, monospace;
 			background-color: green;
+			position: sticky;
 		`}
 
 
@@ -55,14 +42,12 @@ ${({ variant = 'submit' }) =>
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			margin-left: 7rem;
 			color: white;
 			font-weight: bold;
 			width: 15rem;
 			height: 3.2rem;
 			padding: 0.5rem;
 			border: none;
-			margin-top: 2.5rem;
 			background: linear-gradient(45deg, var(--gradient));
 			span {
 				top: 16px;
@@ -92,5 +77,13 @@ ${({ variant = 'Home' }) =>
 			}
 			border-radius: 10px 10px 10px 10px;
 			font-size: 1.6rem;
+		`}
+
+
+${({ variant = 'Search' }) =>
+		variant === 'Search' &&
+		css`
+			background: white;
+			border: palevioletred;
 		`}
 `;
