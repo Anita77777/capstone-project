@@ -54,7 +54,7 @@ const StyledH1 = styled.h1`
 	font-size: 4rem;
 	text-transform: uppercase;
 	color: white;
-	font-family: 'Courier New', Courier, monospace;
+
 	font-weight: lighter;
 `;
 
@@ -62,7 +62,7 @@ const StyledH2 = styled.h2`
 	font-size: 2.6rem;
 	text-transform: uppercase;
 	padding-bottom: 9px;
-	font-family: 'Courier New', Courier, monospace;
+
 	color: white;
 `;
 
@@ -70,7 +70,7 @@ const StyledH3 = styled.h3`
 	font-size: 1.7rem;
 	text-transform: uppercase;
 	padding-bottom: 9px;
-	font-family: 'Courier New', Courier, monospace;
+
 	color: white;
 `;
 
@@ -78,7 +78,7 @@ const StyledP = styled.p`
 	font-size: 1.6rem;
 	padding-bottom: 12px;
 	word-wrap: break-word;
-	font-family: 'Courier New', Courier, monospace;
+
 	color: white;
 `;
 
@@ -86,7 +86,7 @@ const StyledSpan = styled.span`
 	font-size: 1.4rem;
 
 	word-wrap: break-word;
-	font-family: 'Courier New', Courier, monospace;
+
 	color: white;
 	text-align: center;
 `;
@@ -95,7 +95,7 @@ export const TextBookmark = styled.p`
 	justify-content: space-between;
 	font-size: 1.4rem;
 	color: black;
-	font-family: 'Courier New', Courier, monospace;
+
 	font-weight: bolder;
 `;
 
@@ -103,6 +103,6 @@ export const TextTitle = styled.h4`
 	justify-content: space-between;
 	font-size: 1.6rem;
 	color: white;
-	font-family: 'Courier New', Courier, monospace;
+
 	font-weight: bolder;
 `;

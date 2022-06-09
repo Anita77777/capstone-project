@@ -10,6 +10,7 @@ export const Container = styled.div`
 	text-align: start;
 	background-color: black;
 	width: 30rem;
+	margin-bottom: 100px;
 `;
 
 export const Formfield = styled.input`

@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components';
 
 export const Button = styled.button`
-	${({ variant = 'delete' }) =>
-		variant === 'delete' &&
+	${({ variant = 'delete_edit' }) =>
+		variant === 'delete_edit' &&
 		css`
 			display: flex;
 			justify-content: center;
@@ -18,23 +18,7 @@ export const Button = styled.button`
 			position: sticky;
 		`}
 
-	${({ variant = 'edit' }) =>
-		variant === 'edit' &&
-		css`
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			color: white;
-			font-weight: bold;
-			width: 75px;
-			height: 3.2rem;
-			padding: 5px;
-			border: none;
-			font-family: 'Courier New', Courier, monospace;
-			background: linear-gradient(45deg, var(--gradient));
-			position: sticky;
-		`}
-		${({ variant = 'Goodreads' }) =>
+	${({ variant = 'Goodreads' }) =>
 		variant === 'Goodreads' &&
 		css`
 			display: flex;

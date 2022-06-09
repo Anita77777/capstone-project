@@ -56,7 +56,7 @@ export default function Cards({ bookmarkStatus }) {
 						<WrapperButton>
 							<Button
 								type="button"
-								variant="edit"
+								variant="delete_edit"
 								onClick={() => {
 									editComment(books.id);
 								}}
@@ -66,7 +66,7 @@ export default function Cards({ bookmarkStatus }) {
 
 							<Button
 								type="button"
-								variant="delete"
+								variant="delete_edit"
 								onClick={() => {
 									deleteBook(books.id);
 								}}
@@ -86,13 +86,6 @@ export default function Cards({ bookmarkStatus }) {
 					</CardWrapper>
 				);
 			})}
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
 		</div>
 	);
 }

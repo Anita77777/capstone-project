@@ -35,28 +35,28 @@ export default function Bookresults() {
 						<MySVG variant="Search" color="black" size="30px" />
 					</Button>
 				</ContainerSearch>
-				<WrapperList>
-					{books.items.map(book => {
-						return (
-							<li
-								key={book.id}
-								onClick={() => {
-									chooseEntry(book.id);
-								}}
-							>
-								<WrapperImageForm>
-									<Image
-										width={90}
-										height={120}
-										alt={`${book.volumeInfo.title} book`}
-										src={`http://books.google.com/books/content?id=${book.id}&printsec=frontcover&img=1&zoom=1&source=gbs_api`}
-									/>
-								</WrapperImageForm>
-							</li>
-						);
-					})}
-				</WrapperList>
 			</form>
+			<WrapperList>
+				{books.items.map(book => {
+					return (
+						<li
+							key={book.id}
+							onClick={() => {
+								chooseEntry(book.id);
+							}}
+						>
+							<WrapperImageForm>
+								<Image
+									width={90}
+									height={120}
+									alt={`${book.volumeInfo.title} book`}
+									src={`http://books.google.com/books/content?id=${book.id}&printsec=frontcover&img=1&zoom=1&source=gbs_api`}
+								/>
+							</WrapperImageForm>
+						</li>
+					);
+				})}
+			</WrapperList>
 		</section>
 	);
 }

@@ -8,11 +8,12 @@ export const CardWrapper = styled.ul`
 	width: 90%;
 	height: 400px;
 	background-color: black;
-	margin-top: 60px;
+	margin-top: 80px;
 	gap: 20px;
 	margin-left: 20px;
 	border-radius: 20px;
 	border: solid palevioletred;
+	margin-bottom: 100px;
 `;
 
 export const WrapperComment = styled.textarea`
@@ -26,7 +27,7 @@ export const WrapperComment = styled.textarea`
 export const WrapperButton = styled.div`
 	display: flex;
 	gap: 15px;
-	margin-left: -4px;
+	margin-left: 4px;
 	margin-bottom: 20px;
 `;
 export const LinkGood = styled.a`
